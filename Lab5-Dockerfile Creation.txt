@@ -1,0 +1,645 @@
+PS C:\Users\Gaurav.26\downloads\repo\Linux-mac> ssh -i id_rsa ec2-user@3.110.30.82
+The authenticity of host '3.110.30.82 (3.110.30.82)' can't be established.
+ED25519 key fingerprint is SHA256:h9/PTfViJAJkRAGgU/TAKJFRzHF7zbVA5YDTlC+Eah4.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.110.30.82' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-47-35 ~]$ sudo su
+[root@ip-172-31-47-35 ec2-user]# ls
+[root@ip-172-31-47-35 ec2-user]# touch Dockerfile
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+[root@ip-172-31-47-35 ec2-user]# ls
+Dockerfile  newfile
+[root@ip-172-31-47-35 ec2-user]# rm -rf Dockerfile
+[root@ip-172-31-47-35 ec2-user]# touch Dockerfile
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+[root@ip-172-31-47-35 ec2-user]# cat Dockerfile
+FROM ubuntu:latest
+LABEL maintianer="Gaurav Upadhayay <gaurav@gmail.com>"
+COPY newfile /home/newfile
+EXPOSE 80
+RUN apt-get update -y && apt-get install vi -y
+ENV MYNAME="Gaurav Upadhayay"
+WORKDIR /home
+
+[root@ip-172-31-47-35 ec2-user]# docker build -t ubuimg .
+bash: docker: command not found
+[root@ip-172-31-47-35 ec2-user]# yum install docker -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                               201 kB/s |  23 kB     00:00
+Last metadata expiration check: 0:00:01 ago on Sat Sep 20 15:35:35 2025.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                     Architecture                Version                                     Repository                        Size
+============================================================================================================================================================
+Installing:
+ docker                                      x86_64                      25.0.8-1.amzn2023.0.5                       amazonlinux                       46 M
+Installing dependencies:
+ container-selinux                           noarch                      3:2.233.0-1.amzn2023                        amazonlinux                       55 k
+ containerd                                  x86_64                      2.0.5-1.amzn2023.0.2                        amazonlinux                       26 M
+ iptables-libs                               x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      401 k
+ iptables-nft                                x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      183 k
+ libcgroup                                   x86_64                      3.0-1.amzn2023.0.1                          amazonlinux                       75 k
+ libnetfilter_conntrack                      x86_64                      1.0.8-2.amzn2023.0.2                        amazonlinux                       58 k
+ libnfnetlink                                x86_64                      1.0.1-19.amzn2023.0.2                       amazonlinux                       30 k
+ libnftnl                                    x86_64                      1.2.2-2.amzn2023.0.2                        amazonlinux                       84 k
+ pigz                                        x86_64                      2.5-1.amzn2023.0.3                          amazonlinux                       83 k
+ runc                                        x86_64                      1.2.6-1.amzn2023.0.1                        amazonlinux                      3.7 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  11 Packages
+
+Total download size: 77 M
+Installed size: 292 M
+Downloading Packages:
+(1/11): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                     1.4 MB/s |  55 kB     00:00
+(2/11): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                        14 MB/s | 401 kB     00:00
+(3/11): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                        6.5 MB/s | 183 kB     00:00
+(4/11): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                             3.8 MB/s |  75 kB     00:00
+(5/11): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                              1.5 MB/s |  58 kB     00:00
+(6/11): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                       1.1 MB/s |  30 kB     00:00
+(7/11): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                            3.7 MB/s |  84 kB     00:00
+(8/11): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                  2.6 MB/s |  83 kB     00:00
+(9/11): runc-1.2.6-1.amzn2023.0.1.x86_64.rpm                                                                                 36 MB/s | 3.7 MB     00:00
+(10/11): containerd-2.0.5-1.amzn2023.0.2.x86_64.rpm                                                                          52 MB/s |  26 MB     00:00
+(11/11): docker-25.0.8-1.amzn2023.0.5.x86_64.rpm                                                                             51 MB/s |  46 MB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        83 MB/s |  77 MB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                  1/11
+  Installing       : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Running scriptlet: containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                    3/11
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              4/11
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         5/11
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                6/11
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         7/11
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               9/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Installing       : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                     1/11
+  Verifying        : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Verifying        : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                               3/11
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         4/11
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          5/11
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               6/11
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                7/11
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         8/11
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              9/11
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   10/11
+  Verifying        : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                 11/11
+============================================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.8.20250908:
+    Run the following command to upgrade to 2023.8.20250908:
+
+      dnf upgrade --releasever=2023.8.20250908
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250908.html
+
+  Version 2023.8.20250915:
+    Run the following command to upgrade to 2023.8.20250915:
+
+      dnf upgrade --releasever=2023.8.20250915
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250915.html
+
+============================================================================================================================================================
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch              containerd-2.0.5-1.amzn2023.0.2.x86_64            docker-25.0.8-1.amzn2023.0.5.x86_64
+  iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                  iptables-nft-1.8.8-3.amzn2023.0.2.x86_64          libcgroup-3.0-1.amzn2023.0.1.x86_64
+  libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64         libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64         libnftnl-1.2.2-2.amzn2023.0.2.x86_64
+  pigz-2.5-1.amzn2023.0.3.x86_64                             runc-1.2.6-1.amzn2023.0.1.x86_64
+
+Complete!
+[root@ip-172-31-47-35 ec2-user]# docker build -t ubuimg .
+ERROR: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-47-35 ec2-user]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@ip-172-31-47-35 ec2-user]# docker build -t ubu_img .
+[+] Building 15.1s (7/8)                                                                                                                     docker:default
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 302B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       3.5s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 105B                                                                                                                      0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 3.0s
+ => => resolve docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 0.0s
+ => => sha256:985be7c735afdf6f18aaa122c23f87d989c30bba4e9aa24c8278912aac339a8d 424B / 424B                                                             0.0s
+ => => sha256:6d79abd4c96299aa91f5a4a46551042407568a3858b00ab460f4ba430984f62c 2.30kB / 2.30kB                                                         0.0s
+ => => sha256:953cdd4133718b72c5d0a78e754c1405c02510fdb5237265f7955863f1757f83 29.72MB / 29.72MB                                                       1.1s
+ => => sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc 6.69kB / 6.69kB                                                         0.0s
+ => => extracting sha256:953cdd4133718b72c5d0a78e754c1405c02510fdb5237265f7955863f1757f83                                                              1.7s
+ => [2/4] COPY newfile /home/newfile                                                                                                                   0.1s
+ => ERROR [3/4] RUN apt-get update -y && apt-get install vi -y                                                                                         8.3s
+------
+ > [3/4] RUN apt-get update -y && apt-get install vi -y:
+0.656 Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+0.658 Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+1.317 Get:3 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+1.394 Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+1.577 Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+1.615 Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1136 kB]
+1.761 Get:7 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+1.895 Get:8 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+1.938 Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+2.231 Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+2.641 Get:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1439 kB]
+2.930 Get:12 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2306 kB]
+3.889 Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1922 kB]
+4.044 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1793 kB]
+4.196 Get:15 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2414 kB]
+4.400 Get:16 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+4.403 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+4.408 Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.6 kB]
+5.392 Fetched 33.4 MB in 5s (6663 kB/s)
+5.392 Reading package lists...
+6.704 Reading package lists...
+7.908 Building dependency tree...
+8.129 Reading state information...
+8.150 E: Unable to locate package vi
+------
+Dockerfile:5
+--------------------
+   3 |     COPY newfile /home/newfile
+   4 |     EXPOSE 80
+   5 | >>> RUN apt-get update -y && apt-get install vi -y
+   6 |     ENV MYNAME="Gaurav Upadhayay"
+   7 |     WORKDIR /home
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update -y && apt-get install vi -y" did not complete successfully: exit code: 100
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+[root@ip-172-31-47-35 ec2-user]# docker build -t ubu_img .
+[+] Building 11.4s (9/9) FINISHED                                                                                                            docker:default
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 277B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       1.7s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 87B                                                                                                                       0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 0.0s
+ => CACHED [2/4] COPY newfile /home/newfile                                                                                                            0.0s
+ => [3/4] RUN apt-get update -y                                                                                                                        9.2s
+ => [4/4] WORKDIR /home                                                                                                                                0.1s
+ => exporting to image                                                                                                                                 0.3s
+ => => exporting layers                                                                                                                                0.3s
+ => => writing image sha256:8337b1d0cff949a6478aab739dbe6cda26401907ec60928beae9b8492a749688                                                           0.0s
+ => => naming to docker.io/library/ubu_img                                                                                                             0.0s
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+ubu_img      latest    8337b1d0cff9   15 seconds ago   132MB
+[root@ip-172-31-47-35 ec2-user]# docker run -it --name cont1 ubu_img /bin/bash
+root@69c92e52f57c:/home# ls
+newfile  ubuntu
+root@69c92e52f57c:/home# echo $MYNAME
+Gaurav Upadhayay
+root@69c92e52f57c:/home# exit
+exit
+[root@ip-172-31-47-35 ec2-user]# docker inspect ubu_img
+[
+    {
+        "Id": "sha256:8337b1d0cff949a6478aab739dbe6cda26401907ec60928beae9b8492a749688",
+        "RepoTags": [
+            "ubu_img:latest"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2025-09-20T15:43:48.172172321Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "MYNAME=Gaurav Upadhayay"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/home",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "maintianer": "Gaurav Upadhayay <gaurav@gmail.com>",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 132194172,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/iph9pxtoq2zrio4pkzmhy3ju8/diff:/var/lib/docker/overlay2/73ixl6pkkt8bys9vz92qjiumn/diff:/var/lib/docker/overlay2/a1f67667e2c0fa1355ebfa6031b7b5cb20ff92d5cc18f7992cc03a7ca589fa52/diff",
+                "MergedDir": "/var/lib/docker/overlay2/nwpr11odvwn9c3eybcp7p1fh7/merged",
+                "UpperDir": "/var/lib/docker/overlay2/nwpr11odvwn9c3eybcp7p1fh7/diff",
+                "WorkDir": "/var/lib/docker/overlay2/nwpr11odvwn9c3eybcp7p1fh7/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:f9f52dc133e2af9188960e5a5165cafaa51657ef740ff20219e45a561d78c591",
+                "sha256:d8b0a4c06ee3171337557a879eee19d2bbfeb196d691f28250b17791d2be07d1",
+                "sha256:7b97325f9747d5105e1c470589c70d0da6b22c543a04e4832c0d54b25a0d842c",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2025-09-20T15:43:48.508507661Z"
+        }
+    }
+]
+[root@ip-172-31-47-35 ec2-user]# ls
+Dockerfile  newfile
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+[root@ip-172-31-47-35 ec2-user]#
+[root@ip-172-31-47-35 ec2-user]# docker build -t new_img_vol .
+[+] Building 1.9s (9/9) FINISHED                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 290B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       1.8s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 87B                                                                                                                       0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 0.0s
+ => CACHED [2/4] COPY newfile /home/newfile                                                                                                            0.0s
+ => CACHED [3/4] RUN apt-get update -y                                                                                                                 0.0s
+ => CACHED [4/4] WORKDIR /home                                                                                                                         0.0s
+ => exporting to image                                                                                                                                 0.0s
+ => => exporting layers                                                                                                                                0.0s
+ => => writing image sha256:f4e5a12f85bfe2d1ab0949fde72dfacb9636897980ffab4e58458e1677e2b092                                                           0.0s
+ => => naming to docker.io/library/new_img_vol                                                                                                         0.0s
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+ubu_img       latest    8337b1d0cff9   6 minutes ago   132MB
+new_img_vol   latest    f4e5a12f85bf   6 minutes ago   132MB
+[root@ip-172-31-47-35 ec2-user]# docker run -td --name cont_with_vol new_img_vol
+965987e809403c7c9f2868a1910544d6f072b54eae6fb7e5f0d5b5dceafe984b
+[root@ip-172-31-47-35 ec2-user]# docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED         STATUS         PORTS     NAMES
+965987e80940   new_img_vol   "/bin/bash"   7 seconds ago   Up 6 seconds   80/tcp    cont_with_vol
+[root@ip-172-31-47-35 ec2-user]# docker exec -it cont_with_vol bash
+root@965987e80940:/home# ls
+newfile  ubuntu
+root@965987e80940:/home# echo $MYNAME
+Gaurav Upadhayay
+root@965987e80940:/home# ls
+newfile  ubuntu
+root@965987e80940:/home# cd ..
+root@965987e80940:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@965987e80940:/# cd etc
+root@965987e80940:/etc# ls
+alternatives            debconf.conf    gai.conf   hostname     ld.so.conf     machine-id     pam.conf   rc1.d  resolv.conf  skel         systemd
+apt                     debian_version  gnutls     hosts        ld.so.conf.d   mke2fs.conf    pam.d      rc2.d  rmt          subgid       terminfo
+bash.bashrc             default         group      init.d       legal          mtab           passwd     rc3.d  security     subgid-      update-motd.d
+bindresvport.blacklist  dpkg            group-     issue        libaudit.conf  networks       passwd-    rc4.d  selinux      subuid       xattr.conf
+cloud                   e2scrub.conf    gshadow    issue.net    login.defs     nsswitch.conf  profile    rc5.d  shadow       subuid-
+cron.d                  environment     gshadow-   kernel       logrotate.d    opt            profile.d  rc6.d  shadow-      sysctl.conf
+cron.daily              fstab           host.conf  ld.so.cache  lsb-release    os-release     rc0.d      rcS.d  shells       sysctl.d
+root@965987e80940:/etc# exit
+exit
+[root@ip-172-31-47-35 ec2-user]# ls
+Dockerfile  newfile
+[root@ip-172-31-47-35 ec2-user]# cat Dockerfile
+FROM ubuntu:latest
+LABEL maintianer="Gaurav Upadhayay <gaurav@gmail.com>"
+COPY newfile /home/newfile
+EXPOSE 80
+RUN apt-get update -y
+ENV MYNAME="Gaurav Upadhayay"
+WORKDIR /home
+VOLUME /home
+
+[root@ip-172-31-47-35 ec2-user]# docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED         STATUS         PORTS     NAMES
+965987e80940   new_img_vol   "/bin/bash"   7 minutes ago   Up 7 minutes   80/tcp    cont_with_vol
+[root@ip-172-31-47-35 ec2-user]# docker exec -it cont_with_vol
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+[root@ip-172-31-47-35 ec2-user]# docker attach cont_with_vol
+root@965987e80940:/home# ls
+
+
+
+exit
+
+
+^Z
+[1]+  Stopped                 docker attach cont_with_vol
+[root@ip-172-31-47-35 ec2-user]# docker exec -it cont_with_vol
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+[root@ip-172-31-47-35 ec2-user]# docker exec -it cont_with_vol bash
+root@965987e80940:/home# ls
+newfile  ubuntu
+root@965987e80940:/home# cd ubuntu
+root@965987e80940:/home/ubuntu# ls
+root@965987e80940:/home/ubuntu# cd ..
+root@965987e80940:/home# ls
+newfile  ubuntu
+root@965987e80940:/home# ls -l
+total 4
+-rw-r--r--. 1 root   root   12 Sep 20 15:13 newfile
+drwxr-x---. 2 ubuntu ubuntu 57 Sep 20 15:50 ubuntu
+root@965987e80940:/home# exit
+exit
+[root@ip-172-31-47-35 ec2-user]# ls
+Dockerfile  newfile
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+ 9L, 192B written
+[root@ip-172-31-47-35 ec2-user]# ls
+Dockerfile  newfile
+[root@ip-172-31-47-35 ec2-user]# docker image
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED          SIZE
+new_img_vol   latest    f4e5a12f85bf   20 minutes ago   132MB
+ubu_img       latest    8337b1d0cff9   20 minutes ago   132MB
+[root@ip-172-31-47-35 ec2-user]# docker rmi new_img_vol
+Error response from daemon: conflict: unable to remove repository reference "new_img_vol" (must force) - container 965987e80940 is using its referenced image f4e5a12f85bf
+[root@ip-172-31-47-35 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                      PORTS     NAMES
+965987e80940   new_img_vol   "/bin/bash"   14 minutes ago   Up 14 minutes               80/tcp    cont_with_vol
+69c92e52f57c   ubu_img       "/bin/bash"   20 minutes ago   Exited (0) 18 minutes ago             cont1
+[root@ip-172-31-47-35 ec2-user]# docker rm cont_with_vol
+Error response from daemon: cannot remove container "/cont_with_vol": container is running: stop the container before removing or force remove
+[root@ip-172-31-47-35 ec2-user]# docker stop cont_with_vol
+cont_with_vol
+[root@ip-172-31-47-35 ec2-user]# docker rm cont_with_vol
+cont_with_vol
+[root@ip-172-31-47-35 ec2-user]# docker rmi new_img_vol
+Untagged: new_img_vol:latest
+Deleted: sha256:f4e5a12f85bfe2d1ab0949fde72dfacb9636897980ffab4e58458e1677e2b092
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+ubu_img      latest    8337b1d0cff9   22 minutes ago   132MB
+[root@ip-172-31-47-35 ec2-user]# cat Dockerfile
+FROM ubuntu:latest
+LABEL maintianer="Gaurav Upadhayay <gaurav@gmail.com>"
+COPY newfile /home/newfile
+EXPOSE 80
+RUN apt-get update -y
+ENV MYNAME="Gaurav Upadhayay"
+WORKDIR /home
+VOLUME space
+
+[root@ip-172-31-47-35 ec2-user]# docker buile -t img_vol .
+unknown shorthand flag: 't' in -t
+See 'docker --help'.
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Log in to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., 0.12.1)
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/root/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker
+                           context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/root/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/root/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/root/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+
+[root@ip-172-31-47-35 ec2-user]# docker build -t img_vol .
+[+] Building 2.0s (9/9) FINISHED                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 290B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       1.9s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 87B                                                                                                                       0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 0.0s
+ => CACHED [2/4] COPY newfile /home/newfile                                                                                                            0.0s
+ => CACHED [3/4] RUN apt-get update -y                                                                                                                 0.0s
+ => CACHED [4/4] WORKDIR /home                                                                                                                         0.0s
+ => exporting to image                                                                                                                                 0.0s
+ => => exporting layers                                                                                                                                0.0s
+ => => writing image sha256:d179a24eb72e3b5c36cf2f602ccdd8debfc48b9b26471b25bcbd1a3e1f63fafd                                                           0.0s
+ => => naming to docker.io/library/img_vol                                                                                                             0.0s
+[root@ip-172-31-47-35 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+ubu_img      latest    8337b1d0cff9   23 minutes ago   132MB
+img_vol      latest    d179a24eb72e   23 minutes ago   132MB
+[root@ip-172-31-47-35 ec2-user]# docker run -it --name contwithvol img_vol /bin/bash
+root@1b63d3cd6134:/home# ls
+newfile  ubuntu
+root@1b63d3cd6134:/home# ls
+newfile  ubuntu
+root@1b63d3cd6134:/home# cd ..
+root@1b63d3cd6134:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  space  srv  sys  tmp  usr  var
+root@1b63d3cd6134:/# exit
+exit
+[root@ip-172-31-47-35 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-47-35 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                      PORTS     NAMES
+1b63d3cd6134   img_vol   "/bin/bash"   2 minutes ago    Exited (0) 17 seconds ago             contwithvol
+69c92e52f57c   ubu_img   "/bin/bash"   25 minutes ago   Exited (0) 23 minutes ago             cont1
+[root@ip-172-31-47-35 ec2-user]# vi Dockerfile
+[root@ip-172-31-47-35 ec2-user]#  9L, 198B written
+[root@ip-172-31-47-35 ec2-user]# docker build -t img_vol1 .
+[+] Building 1.0s (9/9) FINISHED                                                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 296B                                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       1.0s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load build context                                                                                                                      0.0s
+ => => transferring context: 87B                                                                                                                       0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest@sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc                                 0.0s
+ => CACHED [2/4] COPY newfile /home/newfile                                                                                                            0.0s
+ => CACHED [3/4] RUN apt-get update -y                                                                                                                 0.0s
+ => CACHED [4/4] WORKDIR /home                                                                                                                         0.0s
+ => exporting to image                                                                                                                                 0.0s
+ => => exporting layers                                                                                                                                0.0s
+ => => writing image sha256:84be56b9e44356b7c4c6c64a00532a01ca101a6a6cdaa1b3b281fc78e383c69b                                                           0.0s
+ => => naming to docker.io/library/img_vol1                                                                                                            0.0s
+[root@ip-172-31-47-35 ec2-user]# docker run -it --name contwithvol1 img_vol1 /bin/bash
+root@0cca292f5243:/home# ls
+newfile  space  ubuntu
+root@0cca292f5243:/home# exit
+exit
+[root@ip-172-31-47-35 ec2-user]# cat Dockerfile
+FROM ubuntu:latest
+LABEL maintianer="Gaurav Upadhayay <gaurav@gmail.com>"
+COPY newfile /home/newfile
+EXPOSE 80
+RUN apt-get update -y
+ENV MYNAME="Gaurav Upadhayay"
+WORKDIR /home
+VOLUME /home/space
+
+[root@ip-172-31-47-35 ec2-user]#

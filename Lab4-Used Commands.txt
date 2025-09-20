@@ -1,0 +1,14 @@
+ 53  clear
+   54  docker ps -a
+   55  docker run -td --name cont6 -v :/C-Drive ubuntu
+   56  docker run -td --name cont6 -v :/localDrive ubuntu
+   57  docker run -td --name cont6 -v :/drive ubuntu
+   58  docker run -td --name cont6 -v  /drive ubuntu
+   59  docker ps
+   60  docker inspect 9b764fb1c356
+   61  docker ps
+   62  docker exec -it cont6 bash
+   63  cd /var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data
+   64  ls
+   65  cat file1
+   66  history

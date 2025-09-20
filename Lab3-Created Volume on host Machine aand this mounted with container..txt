@@ -1,0 +1,52 @@
+[root@ip-172-31-46-226 ec2-user]# ls
+Dockerfile
+[root@ip-172-31-46-226 ec2-user]# mkdir mydata
+[root@ip-172-31-46-226 ec2-user]# ls
+Dockerfile  mydata
+[root@ip-172-31-46-226 ec2-user]# cd mydata
+[root@ip-172-31-46-226 mydata]# touch file1
+[root@ip-172-31-46-226 mydata]# cd ..
+[root@ip-172-31-46-226 ec2-user]# ls
+Dockerfile  mydata
+[root@ip-172-31-46-226 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    6d79abd4c962   10 days ago   78.1MB
+ubuntu-img   latest    5aa12f95fa25   10 days ago   78.1MB
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont5 -v mydata:speace ubuntu
+docker: Error response from daemon: invalid volume specification: 'mydata:speace': invalid mount config for type "volume": invalid mount path: 'speace' mount path must be absolute.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont5 -v /home/ec2-user/mydata:speace ubuntu
+docker: Error response from daemon: invalid volume specification: '/home/ec2-user/mydata:speace': invalid mount config for type "bind": invalid mount path:'speace' mount path must be absolute.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# pwd
+/home/ec2-user
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont5 -v /home/ec2-user/mydata:/speace ubuntu
+c6c75f6e441e245628cb47f93b4fc7d5f7ed434211c8bc481e125190c44150d7
+[root@ip-172-31-46-226 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE        COMMAND       CREATED          STATUS                      PORTS     NAMES
+c6c75f6e441e   ubuntu       "/bin/bash"   13 seconds ago   Up 12 seconds                         cont5
+38d4d261d1ea   ubuntu       "/bin/bash"   9 minutes ago    Exited (0) 8 minutes ago              cont4
+4a36c0a33f5d   ubuntu       "/bin/bash"   10 minutes ago   Exited (0) 9 minutes ago              cont3
+d3bd5e2fad01   ubuntu-img   "/bin/bash"   23 minutes ago   Exited (0) 22 minutes ago             cont2
+[root@ip-172-31-46-226 ec2-user]# docker exec -it cont5 bash
+root@c6c75f6e441e:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  speace  srv  sys  tmp  usr  var
+root@c6c75f6e441e:/# cd speace
+root@c6c75f6e441e:/speace# ls
+file1
+root@c6c75f6e441e:/speace# touch file2
+root@c6c75f6e441e:/speace# cat >file2
+this file is created inside the container to check can be visible from host storage
+root@c6c75f6e441e:/speace# exit
+exit
+[root@ip-172-31-46-226 ec2-user]# ls
+Dockerfile  mydata
+[root@ip-172-31-46-226 ec2-user]# cd mydata
+[root@ip-172-31-46-226 mydata]# ls
+file1  file2
+[root@ip-172-31-46-226 mydata]# cat file2
+this file is created inside the container to check can be visible from host storage
+[root@ip-172-31-46-226 mydata]# cd ..
+[root@ip-172-31-46-226 ec2-user]# ls
+Dockerfile  mydata
+[root@ip-172-31-46-226 ec2-user]#

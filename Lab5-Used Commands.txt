@@ -1,0 +1,59 @@
+[root@ip-172-31-47-35 ec2-user]# history
+    1  touch newfile
+    2  cat > newfile
+    3  touch Dockerfile
+    4  vi Dockerfile
+    5  ls
+    6  rm -rf Dockerfile
+    7  touch Dockerfile
+    8  vi Dockerfile
+    9  cat Dockerfile
+   10  docker build -t ubuimg .
+   11  yum install docker -y
+   12  docker build -t ubuimg .
+   13  service docker start
+   14  docker build -t ubu_img .
+   15  docker images
+   16  vi Dockerfile
+   17  docker build -t ubu_img .
+   18  docker images
+   19  docker run -it --name cont1 ubu_img /bin/bash
+   20  docker inspect ubu_img
+   21  ls
+   22  vi Dockerfile
+   23  docker build -t new_img_vol .
+   24  docker images
+   25  docker run -td --name cont_with_vol new_img_vol
+   26  docker ps
+   27  docker exec -it cont_with_vol bash
+   28  ls
+   29  cat Dockerfile
+   30  docker ps
+   31  docker exec -it cont_with_vol
+   32  docker attach cont_with_vol
+   33  docker exec -it cont_with_vol
+   34  docker exec -it cont_with_vol bash
+   35  ls
+   36  vi Dockerfile
+   37  ls
+   38  docker image
+   39  docker images
+   40  docker rmi new_img_vol
+   41  docker ps -a
+   42  docker rm cont_with_vol
+   43  docker stop cont_with_vol
+   44  docker rm cont_with_vol
+   45  docker rmi new_img_vol
+   46  docker images
+   47  cat Dockerfile
+   48  docker buile -t img_vol .
+   49  docker build -t img_vol .
+   50  docker images
+   51  docker run -it --name contwithvol img_vol /bin/bash
+   52  docker ps
+   53  docker ps -a
+   54  vi Dockerfile
+   55  docker build -t img_vol1 .
+   56  docker run -it --name contwithvol1 img_vol1 /bin/bash
+   57  cat Dockerfile
+   58  history

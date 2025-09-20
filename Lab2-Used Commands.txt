@@ -1,0 +1,31 @@
+[root@ip-172-31-46-226 ec2-user]# history
+    1  yum update -y
+    2  yum install docker -y
+    3  docker -v
+    4  service docker start
+    5  docker run -td --name cont1 -p 80:80 ubuntu
+    6  docker ps
+    7  docker port cont1
+    8  docker exec -it cont1 /bin/bash
+    9  history
+   10  clear
+   11  pwd
+   12  vi Dockerfile
+   13  docker build -t ubuntu-img .
+   14  docker images
+   15  docker run -it --name cont2 ubuntu-img /bin/bash
+   16  docker images
+   17  docker run -it --name cont2 --priviledge=true --volumefrom cont1 ubuntu /bin/bash
+   18  docker run -it --name cont2 --privileged=true --volumefrom cont1 ubuntu /bin/bash
+   19  docker run -it --name cont2 --privileged=true --volume-from cont1 ubuntu /bin/bash
+   20  docker ps -a
+   21   docker run -it --name cont2 --privileged=true --volume-from cont1 ubuntu /bin/bash
+   22   docker run -it --name cont2 --privileged=true --volumes-from cont1 ubuntu /bin/bash
+   23   docker run -it --name cont3 --privileged=true --volumes-from cont1 ubuntu /bin/bash
+   24   docker run -it --name cont4 --privileged=true --volumes-from cont2 ubuntu /bin/bash
+   25  docker ps -a
+   26  docker rm cont1
+   27  docker stop cont1
+   28  docker rm cont1
+   29  docker ps -a
+   30  history

@@ -1,0 +1,82 @@
+[root@ip-172-31-46-226 ec2-user]# pwd
+/home/ec2-user
+[root@ip-172-31-46-226 ec2-user]# vi Dockerfile
+[root@ip-172-31-46-226 ec2-user]# docker build -t ubuntu-img .
+[+] Building 0.2s (5/5) FINISHED                                                                         docker:default
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 126B                                                                               0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                   0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [1/1] FROM docker.io/library/ubuntu:latest                                                                     0.0s
+ => exporting to image                                                                                             0.0s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:5aa12f95fa25f872c4e38a3d89a0f82cd0578fee8e12d9dce8836a46b86751bd                       0.0s
+ => => naming to docker.io/library/ubuntu-img                                                                      0.0s
+[root@ip-172-31-46-226 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    6d79abd4c962   10 days ago   78.1MB
+ubuntu-img   latest    5aa12f95fa25   10 days ago   78.1MB
+[root@ip-172-31-46-226 ec2-user]# docker run -it --name cont2 ubuntu-img /bin/bash
+root@d3bd5e2fad01:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  space  srv  sys  tmp  usr  var
+root@d3bd5e2fad01:/# cd space
+root@d3bd5e2fad01:/space# touch file1 file2 file3
+root@d3bd5e2fad01:/space# ls
+file1  file2  file3
+root@d3bd5e2fad01:/space# exit
+exit
+[root@ip-172-31-46-226 ec2-user]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu-img   latest    5aa12f95fa25   10 days ago   78.1MB
+ubuntu       latest    6d79abd4c962   10 days ago   78.1MB
+[root@ip-172-31-46-226 ec2-user]# docker run -it --name cont2 --priviledge=true --volumefrom cont1 ubuntu /bin/bash
+unknown flag: --priviledge
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -it --name cont2 --privileged=true --volumefrom cont1 ubuntu /bin/bash
+unknown flag: --volumefrom
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -it --name cont2 --privileged=true --volume-from cont1 ubuntu /bin/bash
+unknown flag: --volume-from
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE        COMMAND       CREATED          STATUS                      PORTS                               NAMES
+d3bd5e2fad01   ubuntu-img   "/bin/bash"   11 minutes ago   Exited (0) 10 minutes ago                                       cont2
+254d5c81f418   ubuntu       "/bin/bash"   31 minutes ago   Up 31 minutes               0.0.0.0:80->80/tcp, :::80->80/tcp   cont1
+[root@ip-172-31-46-226 ec2-user]#  docker run -it --name cont2 --privileged=true --volume-from cont1 ubuntu /bin/bash
+unknown flag: --volume-from
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]#  docker run -it --name cont2 --privileged=true --volumes-from cont1 ubuntu /bin/bash
+docker: Error response from daemon: Conflict. The container name "/cont2" is already in use by container "d3bd5e2fad01803499c4bb6ce1a40fef722c2450c8f317519da1d7a3ace65f17". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]#  docker run -it --name cont3 --privileged=true --volumes-from cont1 ubuntu /bin/bash
+root@4a36c0a33f5d:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@4a36c0a33f5d:/# exit
+exit
+[root@ip-172-31-46-226 ec2-user]#  docker run -it --name cont4 --privileged=true --volumes-from cont2 ubuntu /bin/bash
+root@38d4d261d1ea:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  space  srv  sys  tmp  usr  var
+root@38d4d261d1ea:/# cd space
+root@38d4d261d1ea:/space# ls
+file1  file2  file3
+root@38d4d261d1ea:/space# exit
+exit
+[root@ip-172-31-46-226 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE        COMMAND       CREATED              STATUS                      PORTS                               NAMES
+38d4d261d1ea   ubuntu       "/bin/bash"   32 seconds ago       Exited (0) 14 seconds ago                                       cont4
+4a36c0a33f5d   ubuntu       "/bin/bash"   About a minute ago   Exited (0) 49 seconds ago                                       cont3
+d3bd5e2fad01   ubuntu-img   "/bin/bash"   14 minutes ago       Exited (0) 13 minutes ago                                       cont2
+254d5c81f418   ubuntu       "/bin/bash"   34 minutes ago       Up 34 minutes               0.0.0.0:80->80/tcp, :::80->80/tcp   cont1
+[root@ip-172-31-46-226 ec2-user]# docker rm cont1
+Error response from daemon: cannot remove container "/cont1": container is running: stop the container before removing or force remove
+[root@ip-172-31-46-226 ec2-user]# docker stop cont1
+cont1
+[root@ip-172-31-46-226 ec2-user]# docker rm cont1
+cont1
+[root@ip-172-31-46-226 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE        COMMAND       CREATED              STATUS                          PORTS     NAMES
+38d4d261d1ea   ubuntu       "/bin/bash"   About a minute ago   Exited (0) About a minute ago             cont4
+4a36c0a33f5d   ubuntu       "/bin/bash"   3 minutes ago        Exited (0) 2 minutes ago                  cont3
+d3bd5e2fad01   ubuntu-img   "/bin/bash"   16 minutes ago       Exited (0) 14 minutes ago                 cont2
+[root@ip-172-31-46-226 ec2-user]#

@@ -1,0 +1,22 @@
+31  clear
+   32  ls
+   33  mkdir mydata
+   34  ls
+   35  cd mydata
+   36  touch file1
+   37  cd ..
+   38  ls
+   39  docker images
+   40  docker run -td --name cont5 -v mydata:speace ubuntu
+   41  docker run -td --name cont5 -v /home/ec2-user/mydata:speace ubuntu
+   42  pwd
+   43  docker run -td --name cont5 -v /home/ec2-user/mydata:/speace ubuntu
+   44  docker ps -a
+   45  docker exec -it cont5 bash
+   46  ls
+   47  cd mydata
+   48  ls
+   49  cat file2
+   50  cd ..
+   51  ls
+   52  history

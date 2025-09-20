@@ -1,0 +1,274 @@
+[root@ip-172-31-46-226 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE        COMMAND       CREATED          STATUS                      PORTS     NAMES
+c6c75f6e441e   ubuntu       "/bin/bash"   5 minutes ago    Up 5 minutes                          cont5
+38d4d261d1ea   ubuntu       "/bin/bash"   14 minutes ago   Exited (0) 14 minutes ago             cont4
+4a36c0a33f5d   ubuntu       "/bin/bash"   16 minutes ago   Exited (0) 14 minutes ago             cont3
+d3bd5e2fad01   ubuntu-img   "/bin/bash"   29 minutes ago   Exited (0) 27 minutes ago             cont2
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont6 -v :/C-Drive ubuntu
+docker: invalid spec: :/C-Drive: empty section between colons.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont6 -v :/localDrive ubuntu
+docker: invalid spec: :/localDrive: empty section between colons.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont6 -v :/drive ubuntu
+docker: invalid spec: :/drive: empty section between colons.
+See 'docker run --help'.
+[root@ip-172-31-46-226 ec2-user]# docker run -td --name cont6 -v  /drive ubuntu
+9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd
+[root@ip-172-31-46-226 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+9b764fb1c356   ubuntu    "/bin/bash"   8 seconds ago   Up 7 seconds             cont6
+c6c75f6e441e   ubuntu    "/bin/bash"   8 minutes ago   Up 8 minutes             cont5
+[root@ip-172-31-46-226 ec2-user]# docker inspect 9b764fb1c356
+[
+    {
+        "Id": "9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd",
+        "Created": "2025-09-20T13:04:28.955072185Z",
+        "Path": "/bin/bash",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 34737,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-09-20T13:04:29.378041769Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:6d79abd4c96299aa91f5a4a46551042407568a3858b00ab460f4ba430984f62c",
+        "ResolvConfPath": "/var/lib/docker/containers/9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd/hostname",
+        "HostsPath": "/var/lib/docker/containers/9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd/hosts",
+        "LogPath": "/var/lib/docker/containers/9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd/9b764fb1c356aacd3e8ab1b7124b7ffee26eb5187e580bd44eaa6b6e1b7c01bd-json.log",
+        "Name": "/cont6",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                47,
+                156
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [
+                {
+                    "Name": "nofile",
+                    "Hard": 65536,
+                    "Soft": 32768
+                }
+            ],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/06d681f3560b3456a5530673213251a955973d5b618a64712c748259fb8aaba2-init/diff:/var/lib/docker/overlay2/4dc6bbfbbafe40bc43cc57fa044359de8c9fad02d48513d86edaf1d15726cf44/diff",
+                "MergedDir": "/var/lib/docker/overlay2/06d681f3560b3456a5530673213251a955973d5b618a64712c748259fb8aaba2/merged",
+                "UpperDir": "/var/lib/docker/overlay2/06d681f3560b3456a5530673213251a955973d5b618a64712c748259fb8aaba2/diff",
+                "WorkDir": "/var/lib/docker/overlay2/06d681f3560b3456a5530673213251a955973d5b618a64712c748259fb8aaba2/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263",
+                "Source": "/var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data",
+                "Destination": "/drive",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "9b764fb1c356",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": true,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/bin/bash"
+            ],
+            "Image": "ubuntu",
+            "Volumes": {
+                "/drive": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "c406a2395c23ed5fb30ed81cf823592a15863824680f01fbae00e6d6a770b9da",
+            "SandboxKey": "/var/run/docker/netns/c406a2395c23",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "ca341f3997fd2aae9f56c27ca0d3763bf718407bed48c8d387363971b86a0dae",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:03",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:03",
+                    "NetworkID": "e74b98c5a888f0af4eebafe8ea1249cc72c3ed2f77dc1c027bbecdfaee75bbc9",
+                    "EndpointID": "ca341f3997fd2aae9f56c27ca0d3763bf718407bed48c8d387363971b86a0dae",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+[root@ip-172-31-46-226 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS              PORTS     NAMES
+9b764fb1c356   ubuntu    "/bin/bash"   About a minute ago   Up About a minute             cont6
+c6c75f6e441e   ubuntu    "/bin/bash"   9 minutes ago        Up 9 minutes                  cont5
+[root@ip-172-31-46-226 ec2-user]# docker exec -it cont6 bash
+root@9b764fb1c356:/# ls
+bin  boot  dev  drive  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@9b764fb1c356:/# cd drive
+root@9b764fb1c356:/drive# touch file1
+root@9b764fb1c356:/drive# echo "this file created inside the container drive moute with host but don't specify the dirve name of host machine, in this practical we have not mentioned host drive however system create by defualt drive which i wanna show you" > file1
+root@9b764fb1c356:/drive# ls
+file1
+root@9b764fb1c356:/drive# cd ..
+root@9b764fb1c356:/# cd drive
+root@9b764fb1c356:/drive# cat >>file1
+below is link from we can see the files on host system :-
+ "/var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data"
+
+root@9b764fb1c356:/drive# cat file1
+this file created inside the container drive moute with host but don't specify the dirve name of host machine, in this practical we have not mentioned hostdrive however system create by defualt drive which i wanna show you
+below is link from we can see the files on host system :-
+ "/var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data"
+
+root@9b764fb1c356:/drive# exit
+exit
+[root@ip-172-31-46-226 ec2-user]# cd /var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data
+[root@ip-172-31-46-226 _data]# ls
+file1
+[root@ip-172-31-46-226 _data]# cat file1
+this file created inside the container drive moute with host but don't specify the dirve name of host machine, in this practical we have not mentioned hostdrive however system create by defualt drive which i wanna show you
+below is link from we can see the files on host system :-
+ "/var/lib/docker/volumes/0879790075dd0f4bd8afc0df8a6096fda733600573dd5889b2c8dbac34bfe263/_data"
+
+[root@ip-172-31-46-226 _data]#
