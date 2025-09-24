@@ -1,0 +1,16 @@
+[root@ip-172-31-4-140 ec2-user]# history
+    1  yum install docker -y
+    2  docker -v
+    3  docker search ubuntu
+    4  service docker start
+    5  docker search ubuntu
+    6  docker pull ubuntu
+    7  docker network ls
+    8  docker run -it --name ser1 --network host ubuntu /bin/bash
+    9  ifconfig
+   10  hostname
+   11  docker ps
+   12  docker start ser1
+   13  docker attach ser1
+   14  history
+[root@ip-172-31-4-140 ec2-user]#

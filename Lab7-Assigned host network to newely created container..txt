@@ -1,0 +1,323 @@
+
+C:\Users\Gaurav.26\Downloads\repo\Linux-mac>ssh -i id_rsa ec2-user@13.233.255.210
+The authenticity of host '13.233.255.210 (13.233.255.210)' can't be established.
+ED25519 key fingerprint is SHA256:J4kZYhsFCpUu1k5kpR1Fg0oRGuTzFWpDbue4Jp+LtSI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.233.255.210' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-4-140 ~]$ sudo su
+[root@ip-172-31-4-140 ec2-user]# yum install docker -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                               178 kB/s |  23 kB     00:00
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                     Architecture                Version                                     Repository                        Size
+============================================================================================================================================================
+Installing:
+ docker                                      x86_64                      25.0.8-1.amzn2023.0.5                       amazonlinux                       46 M
+Installing dependencies:
+ container-selinux                           noarch                      3:2.233.0-1.amzn2023                        amazonlinux                       55 k
+ containerd                                  x86_64                      2.0.5-1.amzn2023.0.2                        amazonlinux                       26 M
+ iptables-libs                               x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      401 k
+ iptables-nft                                x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      183 k
+ libcgroup                                   x86_64                      3.0-1.amzn2023.0.1                          amazonlinux                       75 k
+ libnetfilter_conntrack                      x86_64                      1.0.8-2.amzn2023.0.2                        amazonlinux                       58 k
+ libnfnetlink                                x86_64                      1.0.1-19.amzn2023.0.2                       amazonlinux                       30 k
+ libnftnl                                    x86_64                      1.2.2-2.amzn2023.0.2                        amazonlinux                       84 k
+ pigz                                        x86_64                      2.5-1.amzn2023.0.3                          amazonlinux                       83 k
+ runc                                        x86_64                      1.2.6-1.amzn2023.0.1                        amazonlinux                      3.7 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  11 Packages
+
+Total download size: 77 M
+Installed size: 292 M
+Downloading Packages:
+(1/11): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                     1.6 MB/s |  55 kB     00:00
+(2/11): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                       9.7 MB/s | 401 kB     00:00
+(3/11): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                        5.3 MB/s | 183 kB     00:00
+(4/11): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                             3.3 MB/s |  75 kB     00:00
+(5/11): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                              2.5 MB/s |  58 kB     00:00
+(6/11): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                       1.3 MB/s |  30 kB     00:00
+(7/11): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                            3.3 MB/s |  84 kB     00:00
+(8/11): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                  2.7 MB/s |  83 kB     00:00
+(9/11): runc-1.2.6-1.amzn2023.0.1.x86_64.rpm                                                                                 27 MB/s | 3.7 MB     00:00
+(10/11): containerd-2.0.5-1.amzn2023.0.2.x86_64.rpm                                                                          42 MB/s |  26 MB     00:00
+(11/11): docker-25.0.8-1.amzn2023.0.5.x86_64.rpm                                                                             42 MB/s |  46 MB     00:01
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        69 MB/s |  77 MB     00:01
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                  1/11
+  Installing       : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Running scriptlet: containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                    3/11
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              4/11
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         5/11
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                6/11
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         7/11
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               9/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Installing       : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                     1/11
+  Verifying        : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Verifying        : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                               3/11
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         4/11
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          5/11
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               6/11
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                7/11
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         8/11
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              9/11
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   10/11
+  Verifying        : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                 11/11
+============================================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.8.20250908:
+    Run the following command to upgrade to 2023.8.20250908:
+
+      dnf upgrade --releasever=2023.8.20250908
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250908.html
+
+  Version 2023.8.20250915:
+    Run the following command to upgrade to 2023.8.20250915:
+
+      dnf upgrade --releasever=2023.8.20250915
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250915.html
+
+============================================================================================================================================================
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch              containerd-2.0.5-1.amzn2023.0.2.x86_64            docker-25.0.8-1.amzn2023.0.5.x86_64
+  iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                  iptables-nft-1.8.8-3.amzn2023.0.2.x86_64          libcgroup-3.0-1.amzn2023.0.1.x86_64
+  libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64         libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64         libnftnl-1.2.2-2.amzn2023.0.2.x86_64
+  pigz-2.5-1.amzn2023.0.3.x86_64                             runc-1.2.6-1.amzn2023.0.1.x86_64
+
+Complete!
+[root@ip-172-31-4-140 ec2-user]# docker -v
+Docker version 25.0.8, build 0bab007
+[root@ip-172-31-4-140 ec2-user]# docker search ubuntu
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-4-140 ec2-user]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@ip-172-31-4-140 ec2-user]# docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   17691     [OK]
+ubuntu/squid                     Squid is a caching proxy for the Web. Long-t…   119
+ubuntu/nginx                     Nginx, a high-performance reverse proxy & we…   133
+ubuntu/cortex                    Cortex provides storage for Prometheus. Long…   4
+ubuntu/kafka                     Apache Kafka, a distributed event streaming …   55
+ubuntu/apache2                   Apache, a secure & extensible open-source HT…   97
+ubuntu/prometheus                Prometheus is a systems and service monitori…   73
+ubuntu/bind9                     BIND 9 is a very flexible, full-featured DNS…   113
+ubuntu/zookeeper                 ZooKeeper maintains configuration informatio…   13
+ubuntu/postgres                  PostgreSQL is an open source object-relation…   41
+ubuntu/jre                       Distroless Java runtime based on Ubuntu. Lon…   21
+ubuntu/mysql                     MySQL open source fast, stable, multi-thread…   70
+ubuntu/dotnet-aspnet             Chiselled Ubuntu runtime image for ASP.NET a…   25
+ubuntu/redis                     Redis, an open source key-value store. Long-…   23
+ubuntu/python                    A chiselled Ubuntu rock with the Python runt…   27
+ubuntu/dotnet-deps               Chiselled Ubuntu for self-contained .NET & A…   16
+ubuntu/grafana                   Grafana, a feature rich metrics dashboard & …   12
+ubuntu/dotnet-runtime            Chiselled Ubuntu runtime image for .NET apps…   21
+ubuntu/memcached                 Memcached, in-memory keyvalue store for smal…   5
+ubuntu/prometheus-alertmanager   Alertmanager handles client alerts from Prom…   10
+ubuntu/cassandra                 Cassandra, an open source NoSQL distributed …   2
+ubuntu/mlflow                    MLFlow: for managing the machine learning li…   6
+ubuntu/telegraf                  Telegraf collects, processes, aggregates & w…   4
+ubuntu/chiselled-jre             [MOVED TO ubuntu/jre] Chiselled JRE: distrol…   3
+ubuntu/grafana-agent             Ubuntu ROCK for Grafana Agent, an open-sourc…   0
+[root@ip-172-31-4-140 ec2-user]# docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+953cdd413371: Pull complete
+Digest: sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+[root@ip-172-31-4-140 ec2-user]# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+20269834f360   bridge    bridge    local
+1d5b84632125   host      host      local
+c3a2f1bfa17f   none      null      local
+[root@ip-172-31-4-140 ec2-user]# docker run -it --name ser1 --network host ubuntu /bin/bash
+root@ip-172-31-4-140:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@ip-172-31-4-140:/# hostname -i
+172.31.4.140
+root@ip-172-31-4-140:/# docker inspect ser1
+bash: docker: command not found
+root@ip-172-31-4-140:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:9c:76:84:9d  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.4.140  netmask 255.255.240.0  broadcast 172.31.15.255
+        inet6 fe80::80f:b6ff:fed7:bd1f  prefixlen 64  scopeid 0x20<link>
+        ether 0a:0f:b6:d7:bd:1f  txqueuelen 1000  (Ethernet)
+        RX packets 66836  bytes 161139885 (153.6 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12041  bytes 969611 (946.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 1020 (1020.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1020 (1020.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@ip-172-31-4-140 ec2-user]# hostname
+ip-172-31-4-140.ap-south-1.compute.internal
+[root@ip-172-31-4-140 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-4-140 ec2-user]# docker start ser1
+ser1
+[root@ip-172-31-4-140 ec2-user]# docker attach ser1
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get install iputils -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils
+root@ip-172-31-4-140:/# apt-get install iputiles -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputiles
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# sudo apt-get install iputils-ping -y
+bash: sudo: command not found
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+bash: ping: command not found
+root@ip-172-31-4-140:/# ping 172.31.4.140
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1465 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2356 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1136 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1820 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2463 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1922 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.6 kB]
+Fetched 33.5 MB in 15s (2187 kB/s)
+Reading package lists... Done
+root@ip-172-31-4-140:/# ping 172.31.4.140
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcap2-bin libpam-cap
+The following NEW packages will be installed:
+  iputils-ping libcap2-bin libpam-cap
+0 upgraded, 3 newly installed, 0 to remove and 7 not upgraded.
+Need to get 91.2 kB of archives.
+After this operation, 322 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap2-bin amd64 1:2.66-5ubuntu2.2 [34.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 iputils-ping amd64 3:20240117-1ubuntu0.1 [44.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpam-cap amd64 1:2.66-5ubuntu2.2 [12.5 kB]
+Fetched 91.2 kB in 1s (104 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libcap2-bin.
+(Reading database ... 4381 files and directories currently installed.)
+Preparing to unpack .../libcap2-bin_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libcap2-bin (1:2.66-5ubuntu2.2) ...
+Selecting previously unselected package iputils-ping.
+Preparing to unpack .../iputils-ping_3%3a20240117-1ubuntu0.1_amd64.deb ...
+Unpacking iputils-ping (3:20240117-1ubuntu0.1) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../libpam-cap_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+Setting up libcap2-bin (1:2.66-5ubuntu2.2) ...
+Setting up libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+debconf: falling back to frontend: Teletype
+Setting up iputils-ping (3:20240117-1ubuntu0.1) ...
+root@ip-172-31-4-140:/# ping 172.31.4.140
+PING 172.31.4.140 (172.31.4.140) 56(84) bytes of data.
+64 bytes from 172.31.4.140: icmp_seq=1 ttl=127 time=0.028 ms
+64 bytes from 172.31.4.140: icmp_seq=2 ttl=127 time=0.041 ms
+64 bytes from 172.31.4.140: icmp_seq=3 ttl=127 time=0.035 ms
+^Z
+[1]+  Stopped                 ping 172.31.4.140
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+PING ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140) 56(84) bytes of data.
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=1 ttl=127 time=0.017 ms
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=2 ttl=127 time=0.038 ms
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=3 ttl=127 time=0.034 ms
+^C
+--- ip-172-31-4-140.ap-south-1.compute.internal ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2039ms
+rtt min/avg/max/mdev = 0.017/0.029/0.038/0.009 ms
+root@ip-172-31-4-140:/#
