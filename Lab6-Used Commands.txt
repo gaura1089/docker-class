@@ -1,0 +1,60 @@
+PS C:\Users\Gaurav.26> history
+
+  Id CommandLine
+  -- -----------
+   1 docker network ls
+   2 docker images
+   3 docker run -td --name server1 king019/linux
+   4 docker ps
+   5 docker exec -it server1 bash
+   6 docker network ls
+   7 docker inspect server1
+   8 docker inspect Bridge
+   9 docker inspect bridge
+  10 docker run -it server2 king019/linux bash
+  11 docker run -it --name server2 king019/linux bash
+  12 ping sever2
+  13 ping server1
+  14 docker network
+  15 docker network create mynet
+  16 docker network ls
+  17 docker run -it --network mynet --name server3 king019/linux bash
+  18 docker ps -a
+  19 docker ps
+  20 clear
+  21 docker ps
+  22 docker ps -a
+  23 docker rm server3 server2 server1 con1 cont-new
+  24 docker rm -rf server3 server2 server1 con1 cont-new
+  25 docker stop server2 server1
+  26 docker rm  server3 server2 server1 con1 cont-new
+  27 ls
+  28 clear
+  29 ls
+  30 docker ps
+  31 docker ps -a
+  32 clear
+  33 docker network ls
+  34 docker rm docker-hub
+  35 docker network rm docker-hub
+  36 docker run -td --name ser1 king019/linux
+  37 docker run -td --name ser2 king019/linux
+  38 docker ps
+  39 docker inspect ser1
+  40 docker inspect ser2
+  41 docker inspect bridge
+  42 docker ps
+  43 docker exec -it ser1 bash
+  44 docker ps
+  45 docker exec -it ser1
+  46 docker exec -it ser1 bash
+  47 docker network ls
+  48 docker network connect ser1
+  49 docker network connect
+  50 docker ps
+  51 docker network connect mynet ser1
+  52 docker inspect ser1
+  53 docker inspect ser1
+  54 docker network connect mynet ser2
+  55 docker inspect mynet
+  56 docker exec -it ser1 bash
