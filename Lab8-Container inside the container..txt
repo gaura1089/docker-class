@@ -1,0 +1,1963 @@
+
+C:\Users\Gaurav.26\Downloads\repo\Linux-mac>ssh -i id_rsa ec2-user@13.233.255.210
+The authenticity of host '13.233.255.210 (13.233.255.210)' can't be established.
+ED25519 key fingerprint is SHA256:J4kZYhsFCpUu1k5kpR1Fg0oRGuTzFWpDbue4Jp+LtSI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.233.255.210' (ED25519) to the list of known hosts.
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+[ec2-user@ip-172-31-4-140 ~]$ sudo su
+[root@ip-172-31-4-140 ec2-user]# yum install docker -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                               178 kB/s |  23 kB     00:00
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                     Architecture                Version                                     Repository                        Size
+============================================================================================================================================================
+Installing:
+ docker                                      x86_64                      25.0.8-1.amzn2023.0.5                       amazonlinux                       46 M
+Installing dependencies:
+ container-selinux                           noarch                      3:2.233.0-1.amzn2023                        amazonlinux                       55 k
+ containerd                                  x86_64                      2.0.5-1.amzn2023.0.2                        amazonlinux                       26 M
+ iptables-libs                               x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      401 k
+ iptables-nft                                x86_64                      1.8.8-3.amzn2023.0.2                        amazonlinux                      183 k
+ libcgroup                                   x86_64                      3.0-1.amzn2023.0.1                          amazonlinux                       75 k
+ libnetfilter_conntrack                      x86_64                      1.0.8-2.amzn2023.0.2                        amazonlinux                       58 k
+ libnfnetlink                                x86_64                      1.0.1-19.amzn2023.0.2                       amazonlinux                       30 k
+ libnftnl                                    x86_64                      1.2.2-2.amzn2023.0.2                        amazonlinux                       84 k
+ pigz                                        x86_64                      2.5-1.amzn2023.0.3                          amazonlinux                       83 k
+ runc                                        x86_64                      1.2.6-1.amzn2023.0.1                        amazonlinux                      3.7 M
+
+Transaction Summary
+============================================================================================================================================================
+Install  11 Packages
+
+Total download size: 77 M
+Installed size: 292 M
+Downloading Packages:
+(1/11): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                     1.6 MB/s |  55 kB     00:00
+(2/11): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                       9.7 MB/s | 401 kB     00:00
+(3/11): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                        5.3 MB/s | 183 kB     00:00
+(4/11): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                             3.3 MB/s |  75 kB     00:00
+(5/11): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                              2.5 MB/s |  58 kB     00:00
+(6/11): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                       1.3 MB/s |  30 kB     00:00
+(7/11): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                            3.3 MB/s |  84 kB     00:00
+(8/11): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                  2.7 MB/s |  83 kB     00:00
+(9/11): runc-1.2.6-1.amzn2023.0.1.x86_64.rpm                                                                                 27 MB/s | 3.7 MB     00:00
+(10/11): containerd-2.0.5-1.amzn2023.0.2.x86_64.rpm                                                                          42 MB/s |  26 MB     00:00
+(11/11): docker-25.0.8-1.amzn2023.0.5.x86_64.rpm                                                                             42 MB/s |  46 MB     00:01
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        69 MB/s |  77 MB     00:01
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                    1/1
+  Installing       : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                  1/11
+  Installing       : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Running scriptlet: containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                    3/11
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              4/11
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         5/11
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                6/11
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         7/11
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          8/11
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               9/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    10/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Installing       : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    11/11
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/11
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                     1/11
+  Verifying        : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/11
+  Verifying        : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                               3/11
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                         4/11
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                          5/11
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                               6/11
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                                7/11
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                         8/11
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                              9/11
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   10/11
+  Verifying        : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                 11/11
+============================================================================================================================================================
+WARNING:
+  A newer release of "Amazon Linux" is available.
+
+  Available Versions:
+
+  Version 2023.8.20250908:
+    Run the following command to upgrade to 2023.8.20250908:
+
+      dnf upgrade --releasever=2023.8.20250908
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250908.html
+
+  Version 2023.8.20250915:
+    Run the following command to upgrade to 2023.8.20250915:
+
+      dnf upgrade --releasever=2023.8.20250915
+
+    Release notes:
+     https://docs.aws.amazon.com/linux/al2023/release-notes/relnotes-2023.8.20250915.html
+
+============================================================================================================================================================
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch              containerd-2.0.5-1.amzn2023.0.2.x86_64            docker-25.0.8-1.amzn2023.0.5.x86_64
+  iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                  iptables-nft-1.8.8-3.amzn2023.0.2.x86_64          libcgroup-3.0-1.amzn2023.0.1.x86_64
+  libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64         libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64         libnftnl-1.2.2-2.amzn2023.0.2.x86_64
+  pigz-2.5-1.amzn2023.0.3.x86_64                             runc-1.2.6-1.amzn2023.0.1.x86_64
+
+Complete!
+[root@ip-172-31-4-140 ec2-user]# docker -v
+Docker version 25.0.8, build 0bab007
+[root@ip-172-31-4-140 ec2-user]# docker search ubuntu
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-4-140 ec2-user]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@ip-172-31-4-140 ec2-user]# docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   17691     [OK]
+ubuntu/squid                     Squid is a caching proxy for the Web. Long-t…   119
+ubuntu/nginx                     Nginx, a high-performance reverse proxy & we…   133
+ubuntu/cortex                    Cortex provides storage for Prometheus. Long…   4
+ubuntu/kafka                     Apache Kafka, a distributed event streaming …   55
+ubuntu/apache2                   Apache, a secure & extensible open-source HT…   97
+ubuntu/prometheus                Prometheus is a systems and service monitori…   73
+ubuntu/bind9                     BIND 9 is a very flexible, full-featured DNS…   113
+ubuntu/zookeeper                 ZooKeeper maintains configuration informatio…   13
+ubuntu/postgres                  PostgreSQL is an open source object-relation…   41
+ubuntu/jre                       Distroless Java runtime based on Ubuntu. Lon…   21
+ubuntu/mysql                     MySQL open source fast, stable, multi-thread…   70
+ubuntu/dotnet-aspnet             Chiselled Ubuntu runtime image for ASP.NET a…   25
+ubuntu/redis                     Redis, an open source key-value store. Long-…   23
+ubuntu/python                    A chiselled Ubuntu rock with the Python runt…   27
+ubuntu/dotnet-deps               Chiselled Ubuntu for self-contained .NET & A…   16
+ubuntu/grafana                   Grafana, a feature rich metrics dashboard & …   12
+ubuntu/dotnet-runtime            Chiselled Ubuntu runtime image for .NET apps…   21
+ubuntu/memcached                 Memcached, in-memory keyvalue store for smal…   5
+ubuntu/prometheus-alertmanager   Alertmanager handles client alerts from Prom…   10
+ubuntu/cassandra                 Cassandra, an open source NoSQL distributed …   2
+ubuntu/mlflow                    MLFlow: for managing the machine learning li…   6
+ubuntu/telegraf                  Telegraf collects, processes, aggregates & w…   4
+ubuntu/chiselled-jre             [MOVED TO ubuntu/jre] Chiselled JRE: distrol…   3
+ubuntu/grafana-agent             Ubuntu ROCK for Grafana Agent, an open-sourc…   0
+[root@ip-172-31-4-140 ec2-user]# docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+953cdd413371: Pull complete
+Digest: sha256:353675e2a41babd526e2b837d7ec780c2a05bca0164f7ea5dbbd433d21d166fc
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+[root@ip-172-31-4-140 ec2-user]# docker network ls
+NETWORK ID     NAME      DRIVER    SCOPE
+20269834f360   bridge    bridge    local
+1d5b84632125   host      host      local
+c3a2f1bfa17f   none      null      local
+[root@ip-172-31-4-140 ec2-user]# docker run -it --name ser1 --network host ubuntu /bin/bash
+root@ip-172-31-4-140:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@ip-172-31-4-140:/# hostname -i
+172.31.4.140
+root@ip-172-31-4-140:/# docker inspect ser1
+bash: docker: command not found
+root@ip-172-31-4-140:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:9c:76:84:9d  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enX0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.4.140  netmask 255.255.240.0  broadcast 172.31.15.255
+        inet6 fe80::80f:b6ff:fed7:bd1f  prefixlen 64  scopeid 0x20<link>
+        ether 0a:0f:b6:d7:bd:1f  txqueuelen 1000  (Ethernet)
+        RX packets 66836  bytes 161139885 (153.6 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12041  bytes 969611 (946.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 1020 (1020.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1020 (1020.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@ip-172-31-4-140 ec2-user]# hostname
+ip-172-31-4-140.ap-south-1.compute.internal
+[root@ip-172-31-4-140 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-4-140 ec2-user]# docker start ser1
+ser1
+[root@ip-172-31-4-140 ec2-user]# docker attach ser1
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get install iputils -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils
+root@ip-172-31-4-140:/# apt-get install iputiles -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputiles
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# sudo apt-get install iputils-ping -y
+bash: sudo: command not found
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package iputils-ping
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+bash: ping: command not found
+root@ip-172-31-4-140:/# ping 172.31.4.140
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1465 kB]
+Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2356 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1136 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1820 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2463 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1922 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.6 kB]
+Fetched 33.5 MB in 15s (2187 kB/s)
+Reading package lists... Done
+root@ip-172-31-4-140:/# ping 172.31.4.140
+bash: ping: command not found
+root@ip-172-31-4-140:/# apt-get install iputils-ping -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libcap2-bin libpam-cap
+The following NEW packages will be installed:
+  iputils-ping libcap2-bin libpam-cap
+0 upgraded, 3 newly installed, 0 to remove and 7 not upgraded.
+Need to get 91.2 kB of archives.
+After this operation, 322 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap2-bin amd64 1:2.66-5ubuntu2.2 [34.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 iputils-ping amd64 3:20240117-1ubuntu0.1 [44.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpam-cap amd64 1:2.66-5ubuntu2.2 [12.5 kB]
+Fetched 91.2 kB in 1s (104 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libcap2-bin.
+(Reading database ... 4381 files and directories currently installed.)
+Preparing to unpack .../libcap2-bin_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libcap2-bin (1:2.66-5ubuntu2.2) ...
+Selecting previously unselected package iputils-ping.
+Preparing to unpack .../iputils-ping_3%3a20240117-1ubuntu0.1_amd64.deb ...
+Unpacking iputils-ping (3:20240117-1ubuntu0.1) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../libpam-cap_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+Setting up libcap2-bin (1:2.66-5ubuntu2.2) ...
+Setting up libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.38.2 /usr/local/share/perl/5.38.2 /usr/lib/x86_64-linux-gnu/perl5/5.38 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.38 /usr/share/perl/5.38 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8.)
+debconf: falling back to frontend: Teletype
+Setting up iputils-ping (3:20240117-1ubuntu0.1) ...
+root@ip-172-31-4-140:/# ping 172.31.4.140
+PING 172.31.4.140 (172.31.4.140) 56(84) bytes of data.
+64 bytes from 172.31.4.140: icmp_seq=1 ttl=127 time=0.028 ms
+64 bytes from 172.31.4.140: icmp_seq=2 ttl=127 time=0.041 ms
+64 bytes from 172.31.4.140: icmp_seq=3 ttl=127 time=0.035 ms
+^Z
+[1]+  Stopped                 ping 172.31.4.140
+root@ip-172-31-4-140:/# ping ip-172-31-4-140.ap-south-1.compute.internal
+PING ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140) 56(84) bytes of data.
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=1 ttl=127 time=0.017 ms
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=2 ttl=127 time=0.038 ms
+64 bytes from ip-172-31-4-140.ap-south-1.compute.internal (172.31.4.140): icmp_seq=3 ttl=127 time=0.034 ms
+^C
+--- ip-172-31-4-140.ap-south-1.compute.internal ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2039ms
+rtt min/avg/max/mdev = 0.017/0.029/0.038/0.009 ms
+root@ip-172-31-4-140:/# history
+    1  ls
+    2  hostname -i
+    3  docker inspect ser1
+    4  exit
+    5  ping ip-172-31-4-140.ap-south-1.compute.internal
+    6  apt-get install iputils -y
+    7  apt-get install iputiles -y
+    8  apt-get install iputils-ping -y
+    9  sudo apt-get install iputils-ping -y
+   10  apt-get install iputils-ping -y
+   11  ping ip-172-31-4-140.ap-south-1.compute.internal
+   12  ping 172.31.4.140
+   13  apt-get update
+   14  ping 172.31.4.140
+   15  apt-get install iputils-ping -y
+   16  ping 172.31.4.140
+   17  ping ip-172-31-4-140.ap-south-1.compute.internal
+   18  history
+root@ip-172-31-4-140:/# exit
+exit
+There are stopped jobs.
+root@ip-172-31-4-140:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# history
+    1  yum install docker -y
+    2  docker -v
+    3  docker search ubuntu
+    4  service docker start
+    5  docker search ubuntu
+    6  docker pull ubuntu
+    7  docker network ls
+    8  docker run -it --name ser1 --network host ubuntu /bin/bash
+    9  ifconfig
+   10  hostname
+   11  docker ps
+   12  docker start ser1
+   13  docker attach ser1
+   14  history
+[root@ip-172-31-4-140 ec2-user]#
+[root@ip-172-31-4-140 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                     PORTS     NAMES
+97abbced7393   ubuntu    "/bin/bash"   17 minutes ago   Exited (1) 8 minutes ago             ser1
+[root@ip-172-31-4-140 ec2-user]# docker attach ser1
+You cannot attach to a stopped container, start it first
+[root@ip-172-31-4-140 ec2-user]# docker start ser1
+ser1
+[root@ip-172-31-4-140 ec2-user]# docker attach ser1
+root@ip-172-31-4-140:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@ip-172-31-4-140:/# apt-get install docker
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package docker is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+However the following packages replace it:
+  wmdocker
+
+E: Package 'docker' has no installation candidate
+root@ip-172-31-4-140:/# apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package docker-ce is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+Package docker-ce-cli is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'docker-ce' has no installation candidate
+E: Package 'docker-ce-cli' has no installation candidate
+E: Unable to locate package containerd.io
+E: Couldn't find any package by glob 'containerd.io'
+E: Couldn't find any package by regex 'containerd.io'
+E: Unable to locate package docker-buildx-plugin
+E: Unable to locate package docker-compose-plugin
+root@ip-172-31-4-140:/# docker -v
+bash: docker: command not found
+root@ip-172-31-4-140:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker search amazonlinux
+NAME                          DESCRIPTION                                     STARS     OFFICIAL
+amazonlinux                   Amazon Linux provides a stable, secure, and …   1477      [OK]
+corpusops/amazonlinux         https://github.com/corpusops/docker-amazonli…   0
+socratessystems/amazonlinux   amazonlinux /w aws cli                          0
+brandedholdings/amazonlinux   Customized amazonlinux build                    1
+amd64/amazonlinux             Amazon Linux provides a stable, secure, and …   9
+arm64v8/amazonlinux           Amazon Linux provides a stable, secure, and …   8
+buluma/amazonlinux            Amazon Linux Docker container for Ansible pl…   0
+argusdockersvc1/amazonlinux   amazonlinux for lambda layer                    0
+robertdebock/amazonlinux      Container to test Ansible roles in, includin…   0
+dokken/amazonlinux            EOL DISTRO: Amazon Linux 201X image for kitc…   0
+projectaccuknox/amazonlinux                                                   0
+alderongames/amazonlinux                                                      0
+trollin/amazonlinux                                                           0
+ideavate/amazonlinux          Amazon linux with base tools                    0
+ssww/amazonlinux              Amazon Linux with minor customizations          0
+fedwi/amazonlinux                                                             0
+amazonlinux/greengrass        AWS IoT Greengrass Docker Software              0
+testbeds/amazonlinux          Amazon Linux                                    0
+ppariksh/amazonlinux                                                          0
+litmusimage/amazonlinux                                                       0
+sanjaykumar1999/amazonlinux                                                   0
+nikita093/amazonlinux                                                         0
+knqyf263/amazonlinux                                                          0
+eyesonly22/amazonlinux        AmazonLinux image                               0
+dobrov1978/amazonlinux                                                        0
+[root@ip-172-31-4-140 ec2-user]# docker pull amazolinux
+Using default tag: latest
+Error response from daemon: pull access denied for amazolinux, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+[root@ip-172-31-4-140 ec2-user]# docker pull amazonlinux
+Using default tag: latest
+latest: Pulling from library/amazonlinux
+0727f841555e: Pull complete
+Digest: sha256:4f02d5d4500105878af64950f9c46cde3392b907907cb0d23a885c721a26f67d
+Status: Downloaded newer image for amazonlinux:latest
+docker.io/library/amazonlinux:latest
+[root@ip-172-31-4-140 ec2-user]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+ubuntu        latest    6d79abd4c962   2 weeks ago   78.1MB
+[root@ip-172-31-4-140 ec2-user]# docker run -it --name amz-linux amazonlinux /bin/bash
+bash-5.2# yum update -y
+Amazon Linux 2023 repository                                                                                                 21 MB/s |  45 MB     00:02
+Last metadata expiration check: 0:00:11 ago on Wed Sep 24 11:01:34 2025.
+Dependencies resolved.
+Nothing to do.
+Complete!
+bash-5.2# yum install docker -y
+Last metadata expiration check: 0:00:31 ago on Wed Sep 24 11:01:34 2025.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                   Architecture             Version                                             Repository                     Size
+============================================================================================================================================================
+Installing:
+ docker                                    x86_64                   25.0.8-1.amzn2023.0.5                               amazonlinux                    46 M
+Installing dependencies:
+ container-selinux                         noarch                   3:2.233.0-1.amzn2023                                amazonlinux                    55 k
+ containerd                                x86_64                   2.0.5-1.amzn2023.0.2                                amazonlinux                    26 M
+ cracklib                                  x86_64                   2.9.6-27.amzn2023.0.2                               amazonlinux                    82 k
+ dbus                                      x86_64                   1:1.12.28-1.amzn2023.0.1                            amazonlinux                   8.5 k
+ dbus-broker                               x86_64                   32-1.amzn2023.0.2                                   amazonlinux                   174 k
+ dbus-common                               noarch                   1:1.12.28-1.amzn2023.0.1                            amazonlinux                    15 k
+ device-mapper                             x86_64                   1.02.185-1.amzn2023.0.5                             amazonlinux                   137 k
+ device-mapper-libs                        x86_64                   1.02.185-1.amzn2023.0.5                             amazonlinux                   177 k
+ diffutils                                 x86_64                   3.8-1.amzn2023.0.2                                  amazonlinux                   370 k
+ gzip                                      x86_64                   1.12-1.amzn2023.0.1                                 amazonlinux                   160 k
+ inih                                      x86_64                   58-2.amzn2023.0.1                                   amazonlinux                    19 k
+ iptables-libs                             x86_64                   1.8.8-3.amzn2023.0.2                                amazonlinux                   401 k
+ iptables-nft                              x86_64                   1.8.8-3.amzn2023.0.2                                amazonlinux                   183 k
+ kmod-libs                                 x86_64                   29-2.amzn2023.0.5                                   amazonlinux                    62 k
+ libargon2                                 x86_64                   20171227-9.amzn2023.0.2                             amazonlinux                    29 k
+ libcgroup                                 x86_64                   3.0-1.amzn2023.0.1                                  amazonlinux                    75 k
+ libdb                                     x86_64                   5.3.28-49.amzn2023.0.2                              amazonlinux                   756 k
+ libeconf                                  x86_64                   0.4.0-1.amzn2023.0.3                                amazonlinux                    28 k
+ libedit                                   x86_64                   3.1-38.20210714cvs.amzn2023.0.2                     amazonlinux                   108 k
+ libfdisk                                  x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   153 k
+ libibverbs                                x86_64                   48.0-1.amzn2023.0.1                                 amazonlinux                   433 k
+ libmnl                                    x86_64                   1.0.4-13.amzn2023.0.2                               amazonlinux                    29 k
+ libnetfilter_conntrack                    x86_64                   1.0.8-2.amzn2023.0.2                                amazonlinux                    58 k
+ libnfnetlink                              x86_64                   1.0.1-19.amzn2023.0.2                               amazonlinux                    30 k
+ libnftnl                                  x86_64                   1.2.2-2.amzn2023.0.2                                amazonlinux                    84 k
+ libnl3                                    x86_64                   3.5.0-6.amzn2023.0.2                                amazonlinux                   330 k
+ libpcap                                   x86_64                   14:1.10.1-1.amzn2023.0.2                            amazonlinux                   173 k
+ libpwquality                              x86_64                   1.4.4-6.amzn2023.0.2                                amazonlinux                   106 k
+ libseccomp                                x86_64                   2.5.3-1.amzn2023.0.2                                amazonlinux                    71 k
+ libselinux-utils                          x86_64                   3.4-5.amzn2023.0.2                                  amazonlinux                   142 k
+ libsemanage                               x86_64                   3.4-5.amzn2023.0.2                                  amazonlinux                   121 k
+ libutempter                               x86_64                   1.2.1-4.amzn2023.0.2                                amazonlinux                    26 k
+ pam                                       x86_64                   1.5.1-8.amzn2023.0.6                                amazonlinux                   547 k
+ pigz                                      x86_64                   2.5-1.amzn2023.0.3                                  amazonlinux                    83 k
+ policycoreutils                           x86_64                   3.4-6.amzn2023.0.2                                  amazonlinux                   211 k
+ rpm-plugin-selinux                        x86_64                   4.16.1.3-29.amzn2023.0.6                            amazonlinux                    18 k
+ runc                                      x86_64                   1.2.6-1.amzn2023.0.1                                amazonlinux                   3.7 M
+ selinux-policy                            noarch                   38.1.50-1.amzn2023.0.2                              amazonlinux                    46 k
+ selinux-policy-targeted                   noarch                   38.1.50-1.amzn2023.0.2                              amazonlinux                   6.5 M
+ shadow-utils                              x86_64                   2:4.9-12.amzn2023.0.4                               amazonlinux                   1.1 M
+ systemd                                   x86_64                   252.23-6.amzn2023                                   amazonlinux                   4.2 M
+ systemd-libs                              x86_64                   252.23-6.amzn2023                                   amazonlinux                   614 k
+ systemd-pam                               x86_64                   252.23-6.amzn2023                                   amazonlinux                   316 k
+ userspace-rcu                             x86_64                   0.12.1-3.amzn2023.0.4                               amazonlinux                   105 k
+ util-linux                                x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   2.2 M
+ util-linux-core                           x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   432 k
+ xfsprogs                                  x86_64                   6.12.0-3.amzn2023                                   amazonlinux                   1.1 M
+ xkeyboard-config                          noarch                   2.41-1.amzn2023.0.1                                 amazonlinux                   922 k
+ xz                                        x86_64                   5.2.5-9.amzn2023.0.2                                amazonlinux                   215 k
+Installing weak dependencies:
+ cryptsetup-libs                           x86_64                   2.6.1-1.amzn2023.0.1                                amazonlinux                   489 k
+ libxkbcommon                              x86_64                   1.6.0-2.amzn2023.0.1                                amazonlinux                   145 k
+ qrencode-libs                             x86_64                   4.1.1-2.amzn2023.0.2                                amazonlinux                    66 k
+ systemd-networkd                          x86_64                   252.23-6.amzn2023                                   amazonlinux                   604 k
+ systemd-resolved                          x86_64                   252.23-6.amzn2023                                   amazonlinux                   268 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  55 Packages
+
+Total download size: 100 M
+Installed size: 370 M
+Downloading Packages:
+(1/55): cracklib-2.9.6-27.amzn2023.0.2.x86_64.rpm                                                                           4.0 MB/s |  82 kB     00:00
+(2/55): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                     2.2 MB/s |  55 kB     00:00
+(3/55): cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64.rpm                                                                      18 MB/s | 489 kB     00:00
+(4/55): dbus-1.12.28-1.amzn2023.0.1.x86_64.rpm                                                                              340 kB/s | 8.5 kB     00:00
+(5/55): dbus-common-1.12.28-1.amzn2023.0.1.noarch.rpm                                                                       2.2 MB/s |  15 kB     00:00
+(6/55): dbus-broker-32-1.amzn2023.0.2.x86_64.rpm                                                                             16 MB/s | 174 kB     00:00
+(7/55): device-mapper-1.02.185-1.amzn2023.0.5.x86_64.rpm                                                                    4.8 MB/s | 137 kB     00:00
+(8/55): device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64.rpm                                                               5.7 MB/s | 177 kB     00:00
+(9/55): diffutils-3.8-1.amzn2023.0.2.x86_64.rpm                                                                             5.3 MB/s | 370 kB     00:00
+(10/55): gzip-1.12-1.amzn2023.0.1.x86_64.rpm                                                                                1.2 MB/s | 160 kB     00:00
+(11/55): inih-58-2.amzn2023.0.1.x86_64.rpm                                                                                  302 kB/s |  19 kB     00:00
+(12/55): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                      1.7 MB/s | 401 kB     00:00
+(13/55): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                       1.0 MB/s | 183 kB     00:00
+(14/55): kmod-libs-29-2.amzn2023.0.5.x86_64.rpm                                                                             802 kB/s |  62 kB     00:00
+(15/55): docker-25.0.8-1.amzn2023.0.5.x86_64.rpm                                                                             47 MB/s |  46 MB     00:00
+(16/55): libargon2-20171227-9.amzn2023.0.2.x86_64.rpm                                                                       131 kB/s |  29 kB     00:00
+(17/55): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                             10 MB/s |  75 kB     00:00
+(18/55): libdb-5.3.28-49.amzn2023.0.2.x86_64.rpm                                                                             46 MB/s | 756 kB     00:00
+(19/55): libeconf-0.4.0-1.amzn2023.0.3.x86_64.rpm                                                                           2.1 MB/s |  28 kB     00:00
+(20/55): libfdisk-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                           18 MB/s | 153 kB     00:00
+(21/55): libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64.rpm                                                                 9.0 MB/s | 108 kB     00:00
+(22/55): libmnl-1.0.4-13.amzn2023.0.2.x86_64.rpm                                                                            5.7 MB/s |  29 kB     00:00
+(23/55): libibverbs-48.0-1.amzn2023.0.1.x86_64.rpm                                                                           27 MB/s | 433 kB     00:00
+(24/55): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                             5.8 MB/s |  58 kB     00:00
+(25/55): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                      4.7 MB/s |  30 kB     00:00
+(26/55): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                            12 MB/s |  84 kB     00:00
+(27/55): libnl3-3.5.0-6.amzn2023.0.2.x86_64.rpm                                                                              11 MB/s | 330 kB     00:00
+(28/55): libpcap-1.10.1-1.amzn2023.0.2.x86_64.rpm                                                                           5.5 MB/s | 173 kB     00:00
+(29/55): libpwquality-1.4.4-6.amzn2023.0.2.x86_64.rpm                                                                        14 MB/s | 106 kB     00:00
+(30/55): libseccomp-2.5.3-1.amzn2023.0.2.x86_64.rpm                                                                         9.4 MB/s |  71 kB     00:00
+(31/55): libselinux-utils-3.4-5.amzn2023.0.2.x86_64.rpm                                                                     7.2 MB/s | 142 kB     00:00
+(32/55): libsemanage-3.4-5.amzn2023.0.2.x86_64.rpm                                                                          6.8 MB/s | 121 kB     00:00
+(33/55): libutempter-1.2.1-4.amzn2023.0.2.x86_64.rpm                                                                        5.8 MB/s |  26 kB     00:00
+(34/55): libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64.rpm                                                                        16 MB/s | 145 kB     00:00
+(35/55): pam-1.5.1-8.amzn2023.0.6.x86_64.rpm                                                                                 31 MB/s | 547 kB     00:00
+(36/55): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                 6.4 MB/s |  83 kB     00:00
+(37/55): policycoreutils-3.4-6.amzn2023.0.2.x86_64.rpm                                                                       27 MB/s | 211 kB     00:00
+(38/55): rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64.rpm                                                             3.9 MB/s |  18 kB     00:00
+(39/55): qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64.rpm                                                                      5.5 MB/s |  66 kB     00:00
+(40/55): selinux-policy-38.1.50-1.amzn2023.0.2.noarch.rpm                                                                    12 MB/s |  46 kB     00:00
+(41/55): runc-1.2.6-1.amzn2023.0.1.x86_64.rpm                                                                                24 MB/s | 3.7 MB     00:00
+(42/55): selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch.rpm                                                           33 MB/s | 6.5 MB     00:00
+(43/55): shadow-utils-4.9-12.amzn2023.0.4.x86_64.rpm                                                                         20 MB/s | 1.1 MB     00:00
+(44/55): systemd-252.23-6.amzn2023.x86_64.rpm                                                                                65 MB/s | 4.2 MB     00:00
+(45/55): systemd-libs-252.23-6.amzn2023.x86_64.rpm                                                                          9.6 MB/s | 614 kB     00:00
+(46/55): systemd-networkd-252.23-6.amzn2023.x86_64.rpm                                                                       33 MB/s | 604 kB     00:00
+(47/55): systemd-pam-252.23-6.amzn2023.x86_64.rpm                                                                            23 MB/s | 316 kB     00:00
+(48/55): systemd-resolved-252.23-6.amzn2023.x86_64.rpm                                                                       23 MB/s | 268 kB     00:00
+(49/55): userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64.rpm                                                                      13 MB/s | 105 kB     00:00
+(50/55): util-linux-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                         26 MB/s | 2.2 MB     00:00
+(51/55): util-linux-core-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                   4.5 MB/s | 432 kB     00:00
+(52/55): xfsprogs-6.12.0-3.amzn2023.x86_64.rpm                                                                               27 MB/s | 1.1 MB     00:00
+(53/55): xkeyboard-config-2.41-1.amzn2023.0.1.noarch.rpm                                                                     18 MB/s | 922 kB     00:00
+(54/55): xz-5.2.5-9.amzn2023.0.2.x86_64.rpm                                                                                 7.9 MB/s | 215 kB     00:00
+(55/55): containerd-2.0.5-1.amzn2023.0.2.x86_64.rpm                                                                         6.0 MB/s |  26 MB     00:04
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        18 MB/s | 100 MB     00:05
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                              1/1
+  Preparing        :                                                                                                                                    1/1
+  Installing       : systemd-libs-252.23-6.amzn2023.x86_64                                                                                             1/55
+  Installing       : libseccomp-2.5.3-1.amzn2023.0.2.x86_64                                                                                            2/55
+  Installing       : libmnl-1.0.4-13.amzn2023.0.2.x86_64                                                                                               3/55
+  Installing       : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                  4/55
+  Installing       : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                      5/55
+  Running scriptlet: util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                      5/55
+  Installing       : libsemanage-3.4-5.amzn2023.0.2.x86_64                                                                                             6/55
+  Installing       : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64                                                                                         7/55
+  Installing       : libselinux-utils-3.4-5.amzn2023.0.2.x86_64                                                                                        8/55
+  Installing       : libfdisk-2.37.4-1.amzn2023.0.4.x86_64                                                                                             9/55
+  Installing       : diffutils-3.8-1.amzn2023.0.2.x86_64                                                                                              10/55
+  Running scriptlet: libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          11/55
+  Installing       : libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          11/55
+  Installing       : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                           12/55
+  Running scriptlet: containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                           12/55
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                             13/55
+  Installing       : xz-5.2.5-9.amzn2023.0.2.x86_64                                                                                                   14/55
+  Installing       : xkeyboard-config-2.41-1.amzn2023.0.1.noarch                                                                                      15/55
+  Installing       : libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64                                                                                         16/55
+  Installing       : userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64                                                                                       17/55
+  Installing       : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64                                                                                        18/55
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   19/55
+  Installing       : libnl3-3.5.0-6.amzn2023.0.2.x86_64                                                                                               20/55
+  Installing       : libibverbs-48.0-1.amzn2023.0.1.x86_64                                                                                            21/55
+  Installing       : libpcap-14:1.10.1-1.amzn2023.0.2.x86_64                                                                                          22/55
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                        23/55
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                               24/55
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                        25/55
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         26/55
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         26/55
+  Installing       : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64                                                                                   27/55
+  Installing       : libeconf-0.4.0-1.amzn2023.0.3.x86_64                                                                                             28/55
+  Installing       : libdb-5.3.28-49.amzn2023.0.2.x86_64                                                                                              29/55
+  Installing       : libargon2-20171227-9.amzn2023.0.2.x86_64                                                                                         30/55
+  Installing       : kmod-libs-29-2.amzn2023.0.5.x86_64                                                                                               31/55
+  Installing       : inih-58-2.amzn2023.0.1.x86_64                                                                                                    32/55
+  Installing       : xfsprogs-6.12.0-3.amzn2023.x86_64                                                                                                33/55
+  Installing       : gzip-1.12-1.amzn2023.0.1.x86_64                                                                                                  34/55
+  Installing       : cracklib-2.9.6-27.amzn2023.0.2.x86_64                                                                                            35/55
+  Installing       : pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  36/55
+  Installing       : libpwquality-1.4.4-6.amzn2023.0.2.x86_64                                                                                         37/55
+  Installing       : util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          38/55
+warning: /etc/adjtime created as /etc/adjtime.rpmnew
+
+  Running scriptlet: util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          38/55
+  Installing       : policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        39/55
+  Running scriptlet: policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        39/55
+  Installing       : rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64                                                                               40/55
+  Installing       : selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     41/55
+  Running scriptlet: selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     41/55
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Installing       : selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Installing       : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                      44/55
+  Running scriptlet: dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                      44/55
+  Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Installing       : dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Installing       : dbus-1:1.12.28-1.amzn2023.0.1.x86_64                                                                                             46/55
+  Installing       : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64                                                                                      47/55
+  Installing       : device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64                                                                                48/55
+  Installing       : device-mapper-1.02.185-1.amzn2023.0.5.x86_64                                                                                     49/55
+  Installing       : systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        50/55
+  Running scriptlet: systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        50/55
+  Installing       : systemd-pam-252.23-6.amzn2023.x86_64                                                                                             51/55
+  Installing       : systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        52/55
+  Running scriptlet: systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        52/55
+  Installing       : systemd-252.23-6.amzn2023.x86_64                                                                                                 53/55
+  Running scriptlet: systemd-252.23-6.amzn2023.x86_64                                                                                                 53/55
+Creating group 'input' with GID 104.
+Creating group 'kvm' with GID 36.
+Creating group 'render' with GID 105.
+Creating group 'sgx' with GID 106.
+Creating group 'systemd-journal' with GID 190.
+Creating group 'systemd-network' with GID 192.
+Creating user 'systemd-network' (systemd Network Management) with UID 192 and GID 192.
+Creating group 'systemd-oom' with GID 999.
+Creating user 'systemd-oom' (systemd Userspace OOM Killer) with UID 999 and GID 999.
+Creating group 'systemd-resolve' with GID 193.
+Creating user 'systemd-resolve' (systemd Resolver) with UID 193 and GID 193.
+
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                              54/55
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+  Installing       : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+
+  Running scriptlet: pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  55/55
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            55/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    55/55
+  Running scriptlet: systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        55/55
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                     1/55
+  Verifying        : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/55
+  Verifying        : cracklib-2.9.6-27.amzn2023.0.2.x86_64                                                                                             3/55
+  Verifying        : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64                                                                                       4/55
+  Verifying        : dbus-1:1.12.28-1.amzn2023.0.1.x86_64                                                                                              5/55
+  Verifying        : dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                              6/55
+  Verifying        : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                       7/55
+  Verifying        : device-mapper-1.02.185-1.amzn2023.0.5.x86_64                                                                                      8/55
+  Verifying        : device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64                                                                                 9/55
+  Verifying        : diffutils-3.8-1.amzn2023.0.2.x86_64                                                                                              10/55
+  Verifying        : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/55
+  Verifying        : gzip-1.12-1.amzn2023.0.1.x86_64                                                                                                  12/55
+  Verifying        : inih-58-2.amzn2023.0.1.x86_64                                                                                                    13/55
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                        14/55
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         15/55
+  Verifying        : kmod-libs-29-2.amzn2023.0.5.x86_64                                                                                               16/55
+  Verifying        : libargon2-20171227-9.amzn2023.0.2.x86_64                                                                                         17/55
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                              18/55
+  Verifying        : libdb-5.3.28-49.amzn2023.0.2.x86_64                                                                                              19/55
+  Verifying        : libeconf-0.4.0-1.amzn2023.0.3.x86_64                                                                                             20/55
+  Verifying        : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64                                                                                   21/55
+  Verifying        : libfdisk-2.37.4-1.amzn2023.0.4.x86_64                                                                                            22/55
+  Verifying        : libibverbs-48.0-1.amzn2023.0.1.x86_64                                                                                            23/55
+  Verifying        : libmnl-1.0.4-13.amzn2023.0.2.x86_64                                                                                              24/55
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                               25/55
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                        26/55
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                             27/55
+  Verifying        : libnl3-3.5.0-6.amzn2023.0.2.x86_64                                                                                               28/55
+  Verifying        : libpcap-14:1.10.1-1.amzn2023.0.2.x86_64                                                                                          29/55
+  Verifying        : libpwquality-1.4.4-6.amzn2023.0.2.x86_64                                                                                         30/55
+  Verifying        : libseccomp-2.5.3-1.amzn2023.0.2.x86_64                                                                                           31/55
+  Verifying        : libselinux-utils-3.4-5.amzn2023.0.2.x86_64                                                                                       32/55
+  Verifying        : libsemanage-3.4-5.amzn2023.0.2.x86_64                                                                                            33/55
+  Verifying        : libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          34/55
+  Verifying        : libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64                                                                                         35/55
+  Verifying        : pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  36/55
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   37/55
+  Verifying        : policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        38/55
+  Verifying        : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64                                                                                        39/55
+  Verifying        : rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64                                                                               40/55
+  Verifying        : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                 41/55
+  Verifying        : selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     42/55
+  Verifying        : selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            43/55
+  Verifying        : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64                                                                                        44/55
+  Verifying        : systemd-252.23-6.amzn2023.x86_64                                                                                                 45/55
+  Verifying        : systemd-libs-252.23-6.amzn2023.x86_64                                                                                            46/55
+  Verifying        : systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        47/55
+  Verifying        : systemd-pam-252.23-6.amzn2023.x86_64                                                                                             48/55
+  Verifying        : systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        49/55
+  Verifying        : userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64                                                                                       50/55
+  Verifying        : util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          51/55
+  Verifying        : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                     52/55
+  Verifying        : xfsprogs-6.12.0-3.amzn2023.x86_64                                                                                                53/55
+  Verifying        : xkeyboard-config-2.41-1.amzn2023.0.1.noarch                                                                                      54/55
+  Verifying        : xz-5.2.5-9.amzn2023.0.2.x86_64                                                                                                   55/55
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch           containerd-2.0.5-1.amzn2023.0.2.x86_64         cracklib-2.9.6-27.amzn2023.0.2.x86_64
+  cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64             dbus-1:1.12.28-1.amzn2023.0.1.x86_64           dbus-broker-32-1.amzn2023.0.2.x86_64
+  dbus-common-1:1.12.28-1.amzn2023.0.1.noarch             device-mapper-1.02.185-1.amzn2023.0.5.x86_64   device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64
+  diffutils-3.8-1.amzn2023.0.2.x86_64                     docker-25.0.8-1.amzn2023.0.5.x86_64            gzip-1.12-1.amzn2023.0.1.x86_64
+  inih-58-2.amzn2023.0.1.x86_64                           iptables-libs-1.8.8-3.amzn2023.0.2.x86_64      iptables-nft-1.8.8-3.amzn2023.0.2.x86_64
+  kmod-libs-29-2.amzn2023.0.5.x86_64                      libargon2-20171227-9.amzn2023.0.2.x86_64       libcgroup-3.0-1.amzn2023.0.1.x86_64
+  libdb-5.3.28-49.amzn2023.0.2.x86_64                     libeconf-0.4.0-1.amzn2023.0.3.x86_64           libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64
+  libfdisk-2.37.4-1.amzn2023.0.4.x86_64                   libibverbs-48.0-1.amzn2023.0.1.x86_64          libmnl-1.0.4-13.amzn2023.0.2.x86_64
+  libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64      libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64      libnftnl-1.2.2-2.amzn2023.0.2.x86_64
+  libnl3-3.5.0-6.amzn2023.0.2.x86_64                      libpcap-14:1.10.1-1.amzn2023.0.2.x86_64        libpwquality-1.4.4-6.amzn2023.0.2.x86_64
+  libseccomp-2.5.3-1.amzn2023.0.2.x86_64                  libselinux-utils-3.4-5.amzn2023.0.2.x86_64     libsemanage-3.4-5.amzn2023.0.2.x86_64
+  libutempter-1.2.1-4.amzn2023.0.2.x86_64                 libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64       pam-1.5.1-8.amzn2023.0.6.x86_64
+  pigz-2.5-1.amzn2023.0.3.x86_64                          policycoreutils-3.4-6.amzn2023.0.2.x86_64      qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64
+  rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64      runc-1.2.6-1.amzn2023.0.1.x86_64               selinux-policy-38.1.50-1.amzn2023.0.2.noarch
+  selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch   shadow-utils-2:4.9-12.amzn2023.0.4.x86_64      systemd-252.23-6.amzn2023.x86_64
+  systemd-libs-252.23-6.amzn2023.x86_64                   systemd-networkd-252.23-6.amzn2023.x86_64      systemd-pam-252.23-6.amzn2023.x86_64
+  systemd-resolved-252.23-6.amzn2023.x86_64               userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64     util-linux-2.37.4-1.amzn2023.0.4.x86_64
+  util-linux-core-2.37.4-1.amzn2023.0.4.x86_64            xfsprogs-6.12.0-3.amzn2023.x86_64              xkeyboard-config-2.41-1.amzn2023.0.1.noarch
+  xz-5.2.5-9.amzn2023.0.2.x86_64
+
+Complete!
+bash-5.2# docker -v
+Docker version 25.0.8, build 0bab007
+bash-5.2# docker images
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+bash-5.2# service docker start
+bash: service: command not found
+bash-5.2# yum install service
+Last metadata expiration check: 0:01:49 ago on Wed Sep 24 11:01:34 2025.
+No match for argument: service
+Error: Unable to find a match: service
+bash-5.2# systemctl start docker
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+bash-5.2# docker run -it --name my-container \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /usr/bin/docker:/usr/bin/docker \
+  ubuntu bash
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+bash-5.2# docker run -it --name my-container   -v /var/run/docker.sock:/var/run/docker.sock   -v /usr/bin/docker:/usr/bin/docker   ubuntu bash
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@ip-172-31-4-140 ec2-user]# service docker status
+Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; preset: disabled)
+     Active: active (running) since Wed 2025-09-24 10:36:13 UTC; 34min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+    Process: 27769 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+    Process: 27770 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+   Main PID: 27771 (dockerd)
+      Tasks: 10
+     Memory: 76.3M
+        CPU: 6.286s
+     CGroup: /system.slice/docker.service
+             └─27771 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=32768:65536
+
+Sep 24 10:39:25 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:39:25.251695875Z" level=info msg="ignoring event" container>
+Sep 24 10:39:25 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:39:25.270805075Z" level=warning msg="failed to close stdin:>
+Sep 24 10:47:37 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:47:37.120544963Z" level=info msg="ignoring event" container>
+Sep 24 10:47:37 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:47:37.149868372Z" level=warning msg="failed to close stdin:>
+Sep 24 10:59:14 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:59:14.919943990Z" level=info msg="ignoring event" container>
+Sep 24 10:59:14 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:59:14.950893012Z" level=warning msg="failed to close stdin:>
+Sep 24 10:59:59 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:59:59.011389249Z" level=error msg="Not continuing with pull>
+Sep 24 10:59:59 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T10:59:59.011881625Z" level=info msg="Ignoring extra error retu>
+Sep 24 11:10:43 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T11:10:43.503015500Z" level=info msg="ignoring event" container>
+Sep 24 11:10:43 ip-172-31-4-140.ap-south-1.compute.internal dockerd[27771]: time="2025-09-24T11:10:43.543568481Z" level=warning msg="failed to close stdin:>
+lines 1-24/24 (END)
+
+exit
+[ec2-user@ip-172-31-4-140 ~]$ docker ps -a
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.44/containers/json?all=1": dial unix /var/run/docker.sock: connect: permission denied
+[ec2-user@ip-172-31-4-140 ~]$ docker ps
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.44/containers/json": dial unix /var/run/docker.sock: connect: permission denied
+[ec2-user@ip-172-31-4-140 ~]$ sudo su
+[root@ip-172-31-4-140 ec2-user]# service docker start
+Redirecting to /bin/systemctl start docker.service
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                        PORTS     NAMES
+235bc7e2b0c3   amazonlinux   "/bin/bash"   11 minutes ago   Exited (125) 2 minutes ago              amz-linux
+97abbced7393   ubuntu        "/bin/bash"   34 minutes ago   Exited (127) 13 minutes ago             ser1
+[root@ip-172-31-4-140 ec2-user]# docker attach amz-linux
+You cannot attach to a stopped container, start it first
+[root@ip-172-31-4-140 ec2-user]# docker start amz-linux
+amz-linux
+[root@ip-172-31-4-140 ec2-user]# docker attach amz-linux
+bash-5.2# docker -v
+Docker version 25.0.8, build 0bab007
+bash-5.2# docker run -it \  -v /var/run/docker.sock:/var/run/docker.sock \ -v /usr/bin/docker:/usr/bin/docker \ ubuntu bash
+docker: invalid reference format.
+See 'docker run --help'.
+bash-5.2# docker run -it   -v /var/run/docker.sock:/var/run/docker.sock  -v /usr/bin/docker:/usr/bin/docker  ubuntu bash
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+bash-5.2# service docker start
+bash: service: command not found
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker info
+Client:
+ Version:    25.0.8
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  0.12.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+
+Server:
+ Containers: 2
+  Running: 0
+  Paused: 0
+  Stopped: 2
+ Images: 2
+ Server Version: 25.0.8
+ Storage Driver: overlay2
+  Backing Filesystem: xfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: fb4c30d4ede3531652d86197bf3fc9515e5276d9
+ runc version: 6c52b3fc541fb26fe8c374d5f58112a0a5dbda66
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.1.147-172.266.amzn2023.x86_64
+ Operating System: Amazon Linux 2023.8.20250818
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 949.4MiB
+ Name: ip-172-31-4-140.ap-south-1.compute.internal
+ ID: 9a8f028f-0136-49e8-a908-edcfd07778ca
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+[root@ip-172-31-4-140 ec2-user]# docker run -it \
+  --name docker-inside \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /usr/bin/docker:/usr/bin/docker \
+  --privileged \
+  ubuntu bash
+root@3f84f020b13c:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                            PORTS     NAMES
+3f84f020b13c   ubuntu        "bash"        25 seconds ago   Exited (0) 5 seconds ago                    docker-inside
+235bc7e2b0c3   amazonlinux   "/bin/bash"   16 minutes ago   Exited (127) About a minute ago             amz-linux
+97abbced7393   ubuntu        "/bin/bash"   39 minutes ago   Exited (127) 18 minutes ago                 ser1
+[root@ip-172-31-4-140 ec2-user]# docker start amz-linux
+amz-linux
+[root@ip-172-31-4-140 ec2-user]# docker attach amz-linux
+bash-5.2# docker run -it \
+>   --name docker-inside \
+>   -v /var/run/docker.sock:/var/run/docker.sock \
+>   -v /usr/bin/docker:/usr/bin/docker \
+>   --privileged \
+>   ubuntu bash
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                        PORTS     NAMES
+3f84f020b13c   ubuntu        "bash"        3 minutes ago    Exited (0) 2 minutes ago                docker-inside
+235bc7e2b0c3   amazonlinux   "/bin/bash"   19 minutes ago   Exited (125) 8 seconds ago              amz-linux
+97abbced7393   ubuntu        "/bin/bash"   42 minutes ago   Exited (127) 21 minutes ago             ser1
+[root@ip-172-31-4-140 ec2-user]# docker start docker-inside
+docker-inside
+[root@ip-172-31-4-140 ec2-user]# docker attach docker-inside
+root@3f84f020b13c:/# apt-get install docker
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package docker
+root@3f84f020b13c:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker run -it \
+>   --name docker-inside \
+>   -v /var/run/docker.sock:/var/run/docker.sock \
+>   -v /usr/bin/docker:/usr/bin/docker \
+>   --privileged \
+>  amazonlinuz bash
+Unable to find image 'docker-inside:latest' locally
+docker: Error response from daemon: pull access denied for docker-inside, repository does not exist or may require 'docker login': denied: requested accessto the resource is denied.
+See 'docker run --help'.
+[root@ip-172-31-4-140 ec2-user]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED       SIZE
+amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+ubuntu        latest    6d79abd4c962   2 weeks ago   78.1MB
+[root@ip-172-31-4-140 ec2-user]# apt-get update
+apt-get install docker.io -y
+bash: apt-get: command not found
+bash: apt-get: command not found
+[root@ip-172-31-4-140 ec2-user]# apt-get install docker.io -y
+bash: apt-get: command not found
+[root@ip-172-31-4-140 ec2-user]# docker start docker-inside
+docker-inside
+[root@ip-172-31-4-140 ec2-user]# docker atach docker-inside
+docker: 'atach' is not a docker command.
+See 'docker --help'
+[root@ip-172-31-4-140 ec2-user]# docker attach docker-inside
+root@3f84f020b13c:/# apt-get install docker.io -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package docker.io
+E: Couldn't find any package by glob 'docker.io'
+E: Couldn't find any package by regex 'docker.io'
+root@3f84f020b13c:/# apt-get install docker -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package docker
+root@3f84f020b13c:/# apt-get update
+apt-get install docker.io -y
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1136 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2356 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1465 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1922 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1820 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2463 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.6 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+Fetched 33.5 MB in 5s (6595 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  adduser apparmor bridge-utils ca-certificates containerd dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dns-root-data
+  dnsmasq-base git git-man iproute2 iptables krb5-locales less libapparmor1 libatm1t64 libbpf1 libbrotli1 libbsd0 libcap2-bin libcbor0.10
+  libcurl3t64-gnutls libdbus-1-3 libedit2 libelf1t64 liberror-perl libexpat1 libfido2-1 libgdbm-compat4t64 libgdbm6t64 libgssapi-krb5-2 libip4tc2
+  libip6tc2 libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libmnl0 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 libnghttp2-14 libpam-cap libperl5.38t64 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libxtables12 netbase netcat-openbsd nftables openssh-client openssl patch perl perl-modules-5.38
+  pigz publicsuffix runc ubuntu-fan xauth xz-utils
+Suggested packages:
+  liblocale-gettext-perl cron quota ecryptfs-utils apparmor-profiles-extra apparmor-utils ifupdown default-dbus-session-bus | dbus-session-bus aufs-tools
+  btrfs-progs cgroupfs-mount | cgroup-lite debootstrap docker-buildx docker-compose-v2 docker-doc rinse zfs-fuse | zfsutils gettext-base git-daemon-run
+  | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn iproute2-doc python3:any firewalld kmod gdbm-l10n krb5-doc
+  krb5-user libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql keychain
+  libpam-ssh monkeysphere ssh-askpass ed diffutils-doc perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl make libtap-harness-archive-perl
+The following NEW packages will be installed:
+  adduser apparmor bridge-utils ca-certificates containerd dbus dbus-bin dbus-daemon dbus-session-bus-common dbus-system-bus-common dns-root-data
+  dnsmasq-base docker.io git git-man iproute2 iptables krb5-locales less libapparmor1 libatm1t64 libbpf1 libbrotli1 libbsd0 libcap2-bin libcbor0.10
+  libcurl3t64-gnutls libdbus-1-3 libedit2 libelf1t64 liberror-perl libexpat1 libfido2-1 libgdbm-compat4t64 libgdbm6t64 libgssapi-krb5-2 libip4tc2
+  libip6tc2 libjansson4 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-common libldap2 libmnl0 libnetfilter-conntrack3 libnfnetlink0
+  libnftables1 libnftnl11 libnghttp2-14 libpam-cap libperl5.38t64 libpsl5t64 librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh-4 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 libxtables12 netbase netcat-openbsd nftables openssh-client openssl patch perl perl-modules-5.38
+  pigz publicsuffix runc ubuntu-fan xauth xz-utils
+0 upgraded, 81 newly installed, 0 to remove and 7 not upgraded.
+Need to get 102 MB of archives.
+After this operation, 407 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl-modules-5.38 all 5.38.2-3.2ubuntu0.2 [3110 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm6t64 amd64 1.23-5.1build1 [34.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm-compat4t64 amd64 1.23-5.1build1 [6710 B]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libperl5.38t64 amd64 5.38.2-3.2ubuntu0.2 [4874 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl amd64 5.38.2-3.2ubuntu0.2 [231 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 adduser all 3.137ubuntu1 [101 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssl amd64 3.0.13-0ubuntu3.5 [1002 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 ca-certificates all 20240203 [159 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdbus-1-3 amd64 1.14.10-4ubuntu4.1 [210 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dbus-bin amd64 1.14.10-4ubuntu4.1 [39.3 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dbus-session-bus-common all 1.14.10-4ubuntu4.1 [80.5 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libapparmor1 amd64 4.0.1really4.0.1-0ubuntu0.24.04.4 [50.6 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libexpat1 amd64 2.6.1-2ubuntu0.3 [88.0 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dbus-daemon amd64 1.14.10-4ubuntu4.1 [118 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dbus-system-bus-common all 1.14.10-4ubuntu4.1 [81.6 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dbus amd64 1.14.10-4ubuntu4.1 [24.3 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libelf1t64 amd64 0.190-1.1ubuntu0.1 [57.8 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble/main amd64 libbpf1 amd64 1:1.3.0-2build2 [166 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble/main amd64 libmnl0 amd64 1.0.5-2build1 [12.3 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 libxtables12 amd64 1.8.10-3ubuntu2 [35.7 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap2-bin amd64 1:2.66-5ubuntu2.2 [34.2 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 iproute2 amd64 6.1.0-1ubuntu6.2 [1120 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 krb5-locales all 1.20.1-6ubuntu2.6 [14.8 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 less amd64 590-2ubuntu2.1 [142 kB]
+Get:26 http://archive.ubuntu.com/ubuntu noble/main amd64 libatm1t64 amd64 1:2.5.1-5.1build1 [22.9 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libbsd0 amd64 0.12.1-1build1.1 [41.2 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5support0 amd64 1.20.1-6ubuntu2.6 [34.4 kB]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libk5crypto3 amd64 1.20.1-6ubuntu2.6 [82.0 kB]
+Get:30 http://archive.ubuntu.com/ubuntu noble/main amd64 libkeyutils1 amd64 1.6.3-3build1 [9490 B]
+Get:31 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libkrb5-3 amd64 1.20.1-6ubuntu2.6 [348 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgssapi-krb5-2 amd64 1.20.1-6ubuntu2.6 [143 kB]
+Get:33 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpam-cap amd64 1:2.66-5ubuntu2.2 [12.5 kB]
+Get:34 http://archive.ubuntu.com/ubuntu noble/main amd64 netbase all 6.4 [13.1 kB]
+Get:35 http://archive.ubuntu.com/ubuntu noble/main amd64 netcat-openbsd amd64 1.226-1ubuntu2 [44.3 kB]
+Get:36 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 apparmor amd64 4.0.1really4.0.1-0ubuntu0.24.04.4 [637 kB]
+Get:37 http://archive.ubuntu.com/ubuntu noble/main amd64 libip4tc2 amd64 1.8.10-3ubuntu2 [23.3 kB]
+Get:38 http://archive.ubuntu.com/ubuntu noble/main amd64 libip6tc2 amd64 1.8.10-3ubuntu2 [23.7 kB]
+Get:39 http://archive.ubuntu.com/ubuntu noble/main amd64 libnfnetlink0 amd64 1.0.2-2build1 [14.8 kB]
+Get:40 http://archive.ubuntu.com/ubuntu noble/main amd64 libnetfilter-conntrack3 amd64 1.0.9-6build1 [45.2 kB]
+Get:41 http://archive.ubuntu.com/ubuntu noble/main amd64 libnftnl11 amd64 1.2.6-2build1 [66.0 kB]
+Get:42 http://archive.ubuntu.com/ubuntu noble/main amd64 iptables amd64 1.8.10-3ubuntu2 [381 kB]
+Get:43 http://archive.ubuntu.com/ubuntu noble/main amd64 libcbor0.10 amd64 0.10.2-1.2ubuntu2 [25.8 kB]
+Get:44 http://archive.ubuntu.com/ubuntu noble/main amd64 libedit2 amd64 3.1-20230828-1build1 [97.6 kB]
+Get:45 http://archive.ubuntu.com/ubuntu noble/main amd64 libfido2-1 amd64 1.14.0-1build3 [83.5 kB]
+Get:46 http://archive.ubuntu.com/ubuntu noble/main amd64 libjansson4 amd64 2.14-2build2 [32.8 kB]
+Get:47 http://archive.ubuntu.com/ubuntu noble/main amd64 libnftables1 amd64 1.0.9-1build1 [358 kB]
+Get:48 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libnghttp2-14 amd64 1.59.0-1ubuntu0.2 [74.3 kB]
+Get:49 http://archive.ubuntu.com/ubuntu noble/main amd64 libpsl5t64 amd64 0.21.2-1.1build1 [57.1 kB]
+Get:50 http://archive.ubuntu.com/ubuntu noble/main amd64 libxau6 amd64 1:1.0.9-1build6 [7160 B]
+Get:51 http://archive.ubuntu.com/ubuntu noble/main amd64 libxdmcp6 amd64 1:1.1.3-0ubuntu6 [10.3 kB]
+Get:52 http://archive.ubuntu.com/ubuntu noble/main amd64 libxcb1 amd64 1.15-1ubuntu2 [47.7 kB]
+Get:53 http://archive.ubuntu.com/ubuntu noble/main amd64 libx11-data all 2:1.8.7-1build1 [115 kB]
+Get:54 http://archive.ubuntu.com/ubuntu noble/main amd64 libx11-6 amd64 2:1.8.7-1build1 [650 kB]
+Get:55 http://archive.ubuntu.com/ubuntu noble/main amd64 libxext6 amd64 2:1.3.4-1build2 [30.4 kB]
+Get:56 http://archive.ubuntu.com/ubuntu noble/main amd64 libxmuu1 amd64 2:1.1.3-3build2 [8958 B]
+Get:57 http://archive.ubuntu.com/ubuntu noble/main amd64 nftables amd64 1.0.9-1build1 [69.8 kB]
+Get:58 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 openssh-client amd64 1:9.6p1-3ubuntu13.14 [906 kB]
+Get:59 http://archive.ubuntu.com/ubuntu noble/main amd64 publicsuffix all 20231001.0357-0.1 [129 kB]
+Get:60 http://archive.ubuntu.com/ubuntu noble/main amd64 xauth amd64 1:1.1.2-1build1 [25.6 kB]
+Get:61 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 xz-utils amd64 5.6.1+really5.4.5-1ubuntu0.2 [267 kB]
+Get:62 http://archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+Get:63 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.2.5-0ubuntu1~24.04.1 [8043 kB]
+Get:64 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 1.7.27-0ubuntu1~24.04.1 [37.7 MB]
+Get:65 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
+Get:66 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dnsmasq-base amd64 2.90-2ubuntu0.1 [376 kB]
+Get:67 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 27.5.1-0ubuntu3~24.04.2 [33.0 MB]
+Get:68 http://archive.ubuntu.com/ubuntu noble/main amd64 libbrotli1 amd64 1.1.0-2build2 [331 kB]
+Get:69 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-5ubuntu3.1 [20.4 kB]
+Get:70 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-5ubuntu3.1 [53.2 kB]
+Get:71 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap2 amd64 2.6.7+dfsg-1~exp1ubuntu8.2 [196 kB]
+Get:72 http://archive.ubuntu.com/ubuntu noble/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build7 [56.3 kB]
+Get:73 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-4 amd64 0.10.6-2ubuntu0.1 [188 kB]
+Get:74 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.6 [333 kB]
+Get:75 http://archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25.6 kB]
+Get:76 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.3 [1100 kB]
+Get:77 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.3 [3680 kB]
+Get:78 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libldap-common all 2.6.7+dfsg-1~exp1ubuntu8.2 [31.7 kB]
+Get:79 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsasl2-modules amd64 2.1.28+dfsg1-5ubuntu3.1 [69.9 kB]
+Get:80 http://archive.ubuntu.com/ubuntu noble/main amd64 patch amd64 2.7.6-7build3 [104 kB]
+Get:81 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 ubuntu-fan all 0.12.16+24.04.1 [34.2 kB]
+Fetched 102 MB in 19s (5246 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package perl-modules-5.38.
+(Reading database ... 4381 files and directories currently installed.)
+Preparing to unpack .../0-perl-modules-5.38_5.38.2-3.2ubuntu0.2_all.deb ...
+Unpacking perl-modules-5.38 (5.38.2-3.2ubuntu0.2) ...
+Selecting previously unselected package libgdbm6t64:amd64.
+Preparing to unpack .../1-libgdbm6t64_1.23-5.1build1_amd64.deb ...
+Unpacking libgdbm6t64:amd64 (1.23-5.1build1) ...
+Selecting previously unselected package libgdbm-compat4t64:amd64.
+Preparing to unpack .../2-libgdbm-compat4t64_1.23-5.1build1_amd64.deb ...
+Unpacking libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
+Selecting previously unselected package libperl5.38t64:amd64.
+Preparing to unpack .../3-libperl5.38t64_5.38.2-3.2ubuntu0.2_amd64.deb ...
+Unpacking libperl5.38t64:amd64 (5.38.2-3.2ubuntu0.2) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../4-perl_5.38.2-3.2ubuntu0.2_amd64.deb ...
+Unpacking perl (5.38.2-3.2ubuntu0.2) ...
+Selecting previously unselected package pigz.
+Preparing to unpack .../5-pigz_2.8-1_amd64.deb ...
+Unpacking pigz (2.8-1) ...
+Selecting previously unselected package adduser.
+Preparing to unpack .../6-adduser_3.137ubuntu1_all.deb ...
+Unpacking adduser (3.137ubuntu1) ...
+Setting up adduser (3.137ubuntu1) ...
+Selecting previously unselected package openssl.
+(Reading database ... 6450 files and directories currently installed.)
+Preparing to unpack .../00-openssl_3.0.13-0ubuntu3.5_amd64.deb ...
+Unpacking openssl (3.0.13-0ubuntu3.5) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../01-ca-certificates_20240203_all.deb ...
+Unpacking ca-certificates (20240203) ...
+Selecting previously unselected package libdbus-1-3:amd64.
+Preparing to unpack .../02-libdbus-1-3_1.14.10-4ubuntu4.1_amd64.deb ...
+Unpacking libdbus-1-3:amd64 (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package dbus-bin.
+Preparing to unpack .../03-dbus-bin_1.14.10-4ubuntu4.1_amd64.deb ...
+Unpacking dbus-bin (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package dbus-session-bus-common.
+Preparing to unpack .../04-dbus-session-bus-common_1.14.10-4ubuntu4.1_all.deb ...
+Unpacking dbus-session-bus-common (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package libapparmor1:amd64.
+Preparing to unpack .../05-libapparmor1_4.0.1really4.0.1-0ubuntu0.24.04.4_amd64.deb ...
+Unpacking libapparmor1:amd64 (4.0.1really4.0.1-0ubuntu0.24.04.4) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../06-libexpat1_2.6.1-2ubuntu0.3_amd64.deb ...
+Unpacking libexpat1:amd64 (2.6.1-2ubuntu0.3) ...
+Selecting previously unselected package dbus-daemon.
+Preparing to unpack .../07-dbus-daemon_1.14.10-4ubuntu4.1_amd64.deb ...
+Unpacking dbus-daemon (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package dbus-system-bus-common.
+Preparing to unpack .../08-dbus-system-bus-common_1.14.10-4ubuntu4.1_all.deb ...
+Unpacking dbus-system-bus-common (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package dbus.
+Preparing to unpack .../09-dbus_1.14.10-4ubuntu4.1_amd64.deb ...
+Unpacking dbus (1.14.10-4ubuntu4.1) ...
+Selecting previously unselected package libelf1t64:amd64.
+Preparing to unpack .../10-libelf1t64_0.190-1.1ubuntu0.1_amd64.deb ...
+Unpacking libelf1t64:amd64 (0.190-1.1ubuntu0.1) ...
+Selecting previously unselected package libbpf1:amd64.
+Preparing to unpack .../11-libbpf1_1%3a1.3.0-2build2_amd64.deb ...
+Unpacking libbpf1:amd64 (1:1.3.0-2build2) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../12-libmnl0_1.0.5-2build1_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.5-2build1) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../13-libxtables12_1.8.10-3ubuntu2_amd64.deb ...
+Unpacking libxtables12:amd64 (1.8.10-3ubuntu2) ...
+Selecting previously unselected package libcap2-bin.
+Preparing to unpack .../14-libcap2-bin_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libcap2-bin (1:2.66-5ubuntu2.2) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../15-iproute2_6.1.0-1ubuntu6.2_amd64.deb ...
+Unpacking iproute2 (6.1.0-1ubuntu6.2) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../16-krb5-locales_1.20.1-6ubuntu2.6_all.deb ...
+Unpacking krb5-locales (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package less.
+Preparing to unpack .../17-less_590-2ubuntu2.1_amd64.deb ...
+Unpacking less (590-2ubuntu2.1) ...
+Selecting previously unselected package libatm1t64:amd64.
+Preparing to unpack .../18-libatm1t64_1%3a2.5.1-5.1build1_amd64.deb ...
+Unpacking libatm1t64:amd64 (1:2.5.1-5.1build1) ...
+Selecting previously unselected package libbsd0:amd64.
+Preparing to unpack .../19-libbsd0_0.12.1-1build1.1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.12.1-1build1.1) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../20-libkrb5support0_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../21-libk5crypto3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../22-libkeyutils1_1.6.3-3build1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-3build1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../23-libkrb5-3_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../24-libgssapi-krb5-2_1.20.1-6ubuntu2.6_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.6) ...
+Selecting previously unselected package libpam-cap:amd64.
+Preparing to unpack .../25-libpam-cap_1%3a2.66-5ubuntu2.2_amd64.deb ...
+Unpacking libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+Selecting previously unselected package netbase.
+Preparing to unpack .../26-netbase_6.4_all.deb ...
+Unpacking netbase (6.4) ...
+Selecting previously unselected package netcat-openbsd.
+Preparing to unpack .../27-netcat-openbsd_1.226-1ubuntu2_amd64.deb ...
+Unpacking netcat-openbsd (1.226-1ubuntu2) ...
+Selecting previously unselected package apparmor.
+Preparing to unpack .../28-apparmor_4.0.1really4.0.1-0ubuntu0.24.04.4_amd64.deb ...
+Unpacking apparmor (4.0.1really4.0.1-0ubuntu0.24.04.4) ...
+Selecting previously unselected package libip4tc2:amd64.
+Preparing to unpack .../29-libip4tc2_1.8.10-3ubuntu2_amd64.deb ...
+Unpacking libip4tc2:amd64 (1.8.10-3ubuntu2) ...
+Selecting previously unselected package libip6tc2:amd64.
+Preparing to unpack .../30-libip6tc2_1.8.10-3ubuntu2_amd64.deb ...
+Unpacking libip6tc2:amd64 (1.8.10-3ubuntu2) ...
+Selecting previously unselected package libnfnetlink0:amd64.
+Preparing to unpack .../31-libnfnetlink0_1.0.2-2build1_amd64.deb ...
+Unpacking libnfnetlink0:amd64 (1.0.2-2build1) ...
+Selecting previously unselected package libnetfilter-conntrack3:amd64.
+Preparing to unpack .../32-libnetfilter-conntrack3_1.0.9-6build1_amd64.deb ...
+Unpacking libnetfilter-conntrack3:amd64 (1.0.9-6build1) ...
+Selecting previously unselected package libnftnl11:amd64.
+Preparing to unpack .../33-libnftnl11_1.2.6-2build1_amd64.deb ...
+Unpacking libnftnl11:amd64 (1.2.6-2build1) ...
+Selecting previously unselected package iptables.
+Preparing to unpack .../34-iptables_1.8.10-3ubuntu2_amd64.deb ...
+Unpacking iptables (1.8.10-3ubuntu2) ...
+Selecting previously unselected package libcbor0.10:amd64.
+Preparing to unpack .../35-libcbor0.10_0.10.2-1.2ubuntu2_amd64.deb ...
+Unpacking libcbor0.10:amd64 (0.10.2-1.2ubuntu2) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../36-libedit2_3.1-20230828-1build1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20230828-1build1) ...
+Selecting previously unselected package libfido2-1:amd64.
+Preparing to unpack .../37-libfido2-1_1.14.0-1build3_amd64.deb ...
+Unpacking libfido2-1:amd64 (1.14.0-1build3) ...
+Selecting previously unselected package libjansson4:amd64.
+Preparing to unpack .../38-libjansson4_2.14-2build2_amd64.deb ...
+Unpacking libjansson4:amd64 (2.14-2build2) ...
+Selecting previously unselected package libnftables1:amd64.
+Preparing to unpack .../39-libnftables1_1.0.9-1build1_amd64.deb ...
+Unpacking libnftables1:amd64 (1.0.9-1build1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../40-libnghttp2-14_1.59.0-1ubuntu0.2_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.59.0-1ubuntu0.2) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../41-libpsl5t64_0.21.2-1.1build1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.2-1.1build1) ...
+Selecting previously unselected package libxau6:amd64.
+Preparing to unpack .../42-libxau6_1%3a1.0.9-1build6_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.9-1build6) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../43-libxdmcp6_1%3a1.1.3-0ubuntu6_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.3-0ubuntu6) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../44-libxcb1_1.15-1ubuntu2_amd64.deb ...
+Unpacking libxcb1:amd64 (1.15-1ubuntu2) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../45-libx11-data_2%3a1.8.7-1build1_all.deb ...
+Unpacking libx11-data (2:1.8.7-1build1) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../46-libx11-6_2%3a1.8.7-1build1_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.8.7-1build1) ...
+Selecting previously unselected package libxext6:amd64.
+Preparing to unpack .../47-libxext6_2%3a1.3.4-1build2_amd64.deb ...
+Unpacking libxext6:amd64 (2:1.3.4-1build2) ...
+Selecting previously unselected package libxmuu1:amd64.
+Preparing to unpack .../48-libxmuu1_2%3a1.1.3-3build2_amd64.deb ...
+Unpacking libxmuu1:amd64 (2:1.1.3-3build2) ...
+Selecting previously unselected package nftables.
+Preparing to unpack .../49-nftables_1.0.9-1build1_amd64.deb ...
+Unpacking nftables (1.0.9-1build1) ...
+Selecting previously unselected package openssh-client.
+Preparing to unpack .../50-openssh-client_1%3a9.6p1-3ubuntu13.14_amd64.deb ...
+Unpacking openssh-client (1:9.6p1-3ubuntu13.14) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../51-publicsuffix_20231001.0357-0.1_all.deb ...
+Unpacking publicsuffix (20231001.0357-0.1) ...
+Selecting previously unselected package xauth.
+Preparing to unpack .../52-xauth_1%3a1.1.2-1build1_amd64.deb ...
+Unpacking xauth (1:1.1.2-1build1) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../53-xz-utils_5.6.1+really5.4.5-1ubuntu0.2_amd64.deb ...
+Unpacking xz-utils (5.6.1+really5.4.5-1ubuntu0.2) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../54-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../55-runc_1.2.5-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking runc (1.2.5-0ubuntu1~24.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../56-containerd_1.7.27-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking containerd (1.7.27-0ubuntu1~24.04.1) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../57-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
+Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../58-dnsmasq-base_2.90-2ubuntu0.1_amd64.deb ...
+Unpacking dnsmasq-base (2.90-2ubuntu0.1) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../59-docker.io_27.5.1-0ubuntu3~24.04.2_amd64.deb ...
+Unpacking docker.io (27.5.1-0ubuntu3~24.04.2) ...
+dpkg: error processing archive /tmp/apt-dpkg-install-I1HOWs/59-docker.io_27.5.1-0ubuntu3~24.04.2_amd64.deb (--unpack):
+ unable to make backup link of './usr/bin/docker' before installing new version: Invalid cross-device link
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../60-libbrotli1_1.1.0-2build2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.1.0-2build2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../61-libsasl2-modules-db_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../62-libsasl2-2_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../63-libldap2_2.6.7+dfsg-1~exp1ubuntu8.2_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../64-librtmp1_2.4+20151223.gitfa8646d.1-2build7_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../65-libssh-4_0.10.6-2ubuntu0.1_amd64.deb ...
+Unpacking libssh-4:amd64 (0.10.6-2ubuntu0.1) ...
+Selecting previously unselected package libcurl3t64-gnutls:amd64.
+Preparing to unpack .../66-libcurl3t64-gnutls_8.5.0-2ubuntu10.6_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../67-liberror-perl_0.17029-2_all.deb ...
+Unpacking liberror-perl (0.17029-2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../68-git-man_1%3a2.43.0-1ubuntu7.3_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.3) ...
+Selecting previously unselected package git.
+Preparing to unpack .../69-git_1%3a2.43.0-1ubuntu7.3_amd64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.3) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../70-libldap-common_2.6.7+dfsg-1~exp1ubuntu8.2_all.deb ...
+Unpacking libldap-common (2.6.7+dfsg-1~exp1ubuntu8.2) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../71-libsasl2-modules_2.1.28+dfsg1-5ubuntu3.1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.28+dfsg1-5ubuntu3.1) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../72-patch_2.7.6-7build3_amd64.deb ...
+Unpacking patch (2.7.6-7build3) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../73-ubuntu-fan_0.12.16+24.04.1_all.deb ...
+Unpacking ubuntu-fan (0.12.16+24.04.1) ...
+Errors were encountered while processing:
+ /tmp/apt-dpkg-install-I1HOWs/59-docker.io_27.5.1-0ubuntu3~24.04.2_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+root@3f84f020b13c:/# docker info
+Client:
+ Version:    25.0.8
+ Context:    default
+ Debug Mode: false
+
+Server:
+ Containers: 3
+  Running: 1
+  Paused: 0
+  Stopped: 2
+ Images: 2
+ Server Version: 25.0.8
+ Storage Driver: overlay2
+  Backing Filesystem: xfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: fb4c30d4ede3531652d86197bf3fc9515e5276d9
+ runc version: 6c52b3fc541fb26fe8c374d5f58112a0a5dbda66
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.1.147-172.266.amzn2023.x86_64
+ Operating System: Amazon Linux 2023.8.20250818
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 949.4MiB
+ Name: ip-172-31-4-140.ap-south-1.compute.internal
+ ID: 9a8f028f-0136-49e8-a908-edcfd07778ca
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+
+root@3f84f020b13c:/# docker search amazonlinux
+NAME                          DESCRIPTION                                     STARS     OFFICIAL
+amazonlinux                   Amazon Linux provides a stable, secure, and …   1477      [OK]
+corpusops/amazonlinux         https://github.com/corpusops/docker-amazonli…   0
+socratessystems/amazonlinux   amazonlinux /w aws cli                          0
+brandedholdings/amazonlinux   Customized amazonlinux build                    1
+amd64/amazonlinux             Amazon Linux provides a stable, secure, and …   9
+arm64v8/amazonlinux           Amazon Linux provides a stable, secure, and …   8
+buluma/amazonlinux            Amazon Linux Docker container for Ansible pl…   0
+argusdockersvc1/amazonlinux   amazonlinux for lambda layer                    0
+robertdebock/amazonlinux      Container to test Ansible roles in, includin…   0
+dokken/amazonlinux            EOL DISTRO: Amazon Linux 201X image for kitc…   0
+projectaccuknox/amazonlinux                                                   0
+alderongames/amazonlinux                                                      0
+trollin/amazonlinux                                                           0
+ideavate/amazonlinux          Amazon linux with base tools                    0
+ssww/amazonlinux              Amazon Linux with minor customizations          0
+fedwi/amazonlinux                                                             0
+amazonlinux/greengrass        AWS IoT Greengrass Docker Software              0
+testbeds/amazonlinux          Amazon Linux                                    0
+ppariksh/amazonlinux                                                          0
+litmusimage/amazonlinux                                                       0
+sanjaykumar1999/amazonlinux                                                   0
+nikita093/amazonlinux                                                         0
+knqyf263/amazonlinux                                                          0
+eyesonly22/amazonlinux        AmazonLinux image                               0
+dobrov1978/amazonlinux                                                        0
+root@3f84f020b13c:/# docker pull amazonlinux
+Using default tag: latest
+latest: Pulling from library/amazonlinux
+Digest: sha256:4f02d5d4500105878af64950f9c46cde3392b907907cb0d23a885c721a26f67d
+Status: Image is up to date for amazonlinux:latest
+docker.io/library/amazonlinux:latest
+root@3f84f020b13c:/# docker pull amazonlinux:latest
+latest: Pulling from library/amazonlinux
+Digest: sha256:4f02d5d4500105878af64950f9c46cde3392b907907cb0d23a885c721a26f67d
+Status: Image is up to date for amazonlinux:latest
+docker.io/library/amazonlinux:latest
+root@3f84f020b13c:/# docker pull amd64/amazonlinux
+Using default tag: latest
+latest: Pulling from amd64/amazonlinux
+Digest: sha256:f35c1224a0ce8c06056f69ea397c2b9d3f0d1621e01ca45976418e02e91eeb80
+Status: Downloaded newer image for amd64/amazonlinux:latest
+docker.io/amd64/amazonlinux:latest
+root@3f84f020b13c:/# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+amd64/amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+amazonlinux         latest    1a9d780a8670   13 days ago   149MB
+ubuntu              latest    6d79abd4c962   2 weeks ago   78.1MB
+root@3f84f020b13c:/# docker run -td --name cont-inside-cont amazonlinux
+a3f13c788e772df5dee69d69acb36d67b88115ca5546f22ab1c4d55491cb7895
+root@3f84f020b13c:/# docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS         PORTS     NAMES
+a3f13c788e77   amazonlinux   "/bin/bash"   5 seconds ago    Up 4 seconds             cont-inside-cont
+3f84f020b13c   ubuntu        "bash"        10 minutes ago   Up 4 minutes             docker-inside
+root@3f84f020b13c:/# docker attach cont-inside-cont
+bash-5.2# ls
+^Z
+[1]+  Stopped                 docker attach cont-inside-cont
+root@3f84f020b13c:/# docker exec -it cont-inside-cont bash
+bash-5.2# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+bash-5.2#
+bash-5.2# exit
+exit
+root@3f84f020b13c:/# exit
+exit
+There are stopped jobs.
+root@3f84f020b13c:/# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                        PORTS     NAMES
+a3f13c788e77   amazonlinux   "/bin/bash"   3 minutes ago    Up 3 minutes                            cont-inside-cont
+3f84f020b13c   ubuntu        "bash"        13 minutes ago   Exited (1) 11 seconds ago               docker-inside
+235bc7e2b0c3   amazonlinux   "/bin/bash"   29 minutes ago   Exited (125) 10 minutes ago             amz-linux
+97abbced7393   ubuntu        "/bin/bash"   52 minutes ago   Exited (127) 31 minutes ago             ser1
+[root@ip-172-31-4-140 ec2-user]# docker ps
+CONTAINER ID   IMAGE         COMMAND       CREATED         STATUS         PORTS     NAMES
+a3f13c788e77   amazonlinux   "/bin/bash"   4 minutes ago   Up 4 minutes             cont-inside-cont
+[root@ip-172-31-4-140 ec2-user]# docker stop cont-inside-cont
+cont-inside-cont
+[root@ip-172-31-4-140 ec2-user]# docker rm cont-inside-cont docker-inside amz-linux ser1
+cont-inside-cont
+docker-inside
+amz-linux
+ser1
+[root@ip-172-31-4-140 ec2-user]# ls
+--name  --privileged  -v  amazonlinuz
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@ip-172-31-4-140 ec2-user]#
+[root@ip-172-31-4-140 ec2-user]# docker run -it \
+  --name doc-mac \
+  --privileged \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /usr/bin/docker:/usr/bin/docker \
+  amazonlinux bash
+bash-5.2# yum update -y
+Amazon Linux 2023 repository                                                                                                 23 MB/s |  45 MB     00:02
+Last metadata expiration check: 0:00:11 ago on Wed Sep 24 11:34:04 2025.
+Dependencies resolved.
+Nothing to do.
+Complete!
+bash-5.2# yum install docker -y
+Last metadata expiration check: 0:00:18 ago on Wed Sep 24 11:34:04 2025.
+Dependencies resolved.
+============================================================================================================================================================
+ Package                                   Architecture             Version                                             Repository                     Size
+============================================================================================================================================================
+Installing:
+ docker                                    x86_64                   25.0.8-1.amzn2023.0.5                               amazonlinux                    46 M
+Installing dependencies:
+ container-selinux                         noarch                   3:2.233.0-1.amzn2023                                amazonlinux                    55 k
+ containerd                                x86_64                   2.0.5-1.amzn2023.0.2                                amazonlinux                    26 M
+ cracklib                                  x86_64                   2.9.6-27.amzn2023.0.2                               amazonlinux                    82 k
+ dbus                                      x86_64                   1:1.12.28-1.amzn2023.0.1                            amazonlinux                   8.5 k
+ dbus-broker                               x86_64                   32-1.amzn2023.0.2                                   amazonlinux                   174 k
+ dbus-common                               noarch                   1:1.12.28-1.amzn2023.0.1                            amazonlinux                    15 k
+ device-mapper                             x86_64                   1.02.185-1.amzn2023.0.5                             amazonlinux                   137 k
+ device-mapper-libs                        x86_64                   1.02.185-1.amzn2023.0.5                             amazonlinux                   177 k
+ diffutils                                 x86_64                   3.8-1.amzn2023.0.2                                  amazonlinux                   370 k
+ gzip                                      x86_64                   1.12-1.amzn2023.0.1                                 amazonlinux                   160 k
+ inih                                      x86_64                   58-2.amzn2023.0.1                                   amazonlinux                    19 k
+ iptables-libs                             x86_64                   1.8.8-3.amzn2023.0.2                                amazonlinux                   401 k
+ iptables-nft                              x86_64                   1.8.8-3.amzn2023.0.2                                amazonlinux                   183 k
+ kmod-libs                                 x86_64                   29-2.amzn2023.0.5                                   amazonlinux                    62 k
+ libargon2                                 x86_64                   20171227-9.amzn2023.0.2                             amazonlinux                    29 k
+ libcgroup                                 x86_64                   3.0-1.amzn2023.0.1                                  amazonlinux                    75 k
+ libdb                                     x86_64                   5.3.28-49.amzn2023.0.2                              amazonlinux                   756 k
+ libeconf                                  x86_64                   0.4.0-1.amzn2023.0.3                                amazonlinux                    28 k
+ libedit                                   x86_64                   3.1-38.20210714cvs.amzn2023.0.2                     amazonlinux                   108 k
+ libfdisk                                  x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   153 k
+ libibverbs                                x86_64                   48.0-1.amzn2023.0.1                                 amazonlinux                   433 k
+ libmnl                                    x86_64                   1.0.4-13.amzn2023.0.2                               amazonlinux                    29 k
+ libnetfilter_conntrack                    x86_64                   1.0.8-2.amzn2023.0.2                                amazonlinux                    58 k
+ libnfnetlink                              x86_64                   1.0.1-19.amzn2023.0.2                               amazonlinux                    30 k
+ libnftnl                                  x86_64                   1.2.2-2.amzn2023.0.2                                amazonlinux                    84 k
+ libnl3                                    x86_64                   3.5.0-6.amzn2023.0.2                                amazonlinux                   330 k
+ libpcap                                   x86_64                   14:1.10.1-1.amzn2023.0.2                            amazonlinux                   173 k
+ libpwquality                              x86_64                   1.4.4-6.amzn2023.0.2                                amazonlinux                   106 k
+ libseccomp                                x86_64                   2.5.3-1.amzn2023.0.2                                amazonlinux                    71 k
+ libselinux-utils                          x86_64                   3.4-5.amzn2023.0.2                                  amazonlinux                   142 k
+ libsemanage                               x86_64                   3.4-5.amzn2023.0.2                                  amazonlinux                   121 k
+ libutempter                               x86_64                   1.2.1-4.amzn2023.0.2                                amazonlinux                    26 k
+ pam                                       x86_64                   1.5.1-8.amzn2023.0.6                                amazonlinux                   547 k
+ pigz                                      x86_64                   2.5-1.amzn2023.0.3                                  amazonlinux                    83 k
+ policycoreutils                           x86_64                   3.4-6.amzn2023.0.2                                  amazonlinux                   211 k
+ rpm-plugin-selinux                        x86_64                   4.16.1.3-29.amzn2023.0.6                            amazonlinux                    18 k
+ runc                                      x86_64                   1.2.6-1.amzn2023.0.1                                amazonlinux                   3.7 M
+ selinux-policy                            noarch                   38.1.50-1.amzn2023.0.2                              amazonlinux                    46 k
+ selinux-policy-targeted                   noarch                   38.1.50-1.amzn2023.0.2                              amazonlinux                   6.5 M
+ shadow-utils                              x86_64                   2:4.9-12.amzn2023.0.4                               amazonlinux                   1.1 M
+ systemd                                   x86_64                   252.23-6.amzn2023                                   amazonlinux                   4.2 M
+ systemd-libs                              x86_64                   252.23-6.amzn2023                                   amazonlinux                   614 k
+ systemd-pam                               x86_64                   252.23-6.amzn2023                                   amazonlinux                   316 k
+ userspace-rcu                             x86_64                   0.12.1-3.amzn2023.0.4                               amazonlinux                   105 k
+ util-linux                                x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   2.2 M
+ util-linux-core                           x86_64                   2.37.4-1.amzn2023.0.4                               amazonlinux                   432 k
+ xfsprogs                                  x86_64                   6.12.0-3.amzn2023                                   amazonlinux                   1.1 M
+ xkeyboard-config                          noarch                   2.41-1.amzn2023.0.1                                 amazonlinux                   922 k
+ xz                                        x86_64                   5.2.5-9.amzn2023.0.2                                amazonlinux                   215 k
+Installing weak dependencies:
+ cryptsetup-libs                           x86_64                   2.6.1-1.amzn2023.0.1                                amazonlinux                   489 k
+ libxkbcommon                              x86_64                   1.6.0-2.amzn2023.0.1                                amazonlinux                   145 k
+ qrencode-libs                             x86_64                   4.1.1-2.amzn2023.0.2                                amazonlinux                    66 k
+ systemd-networkd                          x86_64                   252.23-6.amzn2023                                   amazonlinux                   604 k
+ systemd-resolved                          x86_64                   252.23-6.amzn2023                                   amazonlinux                   268 k
+
+Transaction Summary
+============================================================================================================================================================
+Install  55 Packages
+
+Total download size: 100 M
+Installed size: 370 M
+Downloading Packages:
+(1/55): container-selinux-2.233.0-1.amzn2023.noarch.rpm                                                                     2.7 MB/s |  55 kB     00:00
+(2/55): cracklib-2.9.6-27.amzn2023.0.2.x86_64.rpm                                                                           2.7 MB/s |  82 kB     00:00
+(3/55): cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64.rpm                                                                      18 MB/s | 489 kB     00:00
+(4/55): dbus-1.12.28-1.amzn2023.0.1.x86_64.rpm                                                                              414 kB/s | 8.5 kB     00:00
+(5/55): dbus-common-1.12.28-1.amzn2023.0.1.noarch.rpm                                                                       2.1 MB/s |  15 kB     00:00
+(6/55): dbus-broker-32-1.amzn2023.0.2.x86_64.rpm                                                                             10 MB/s | 174 kB     00:00
+(7/55): device-mapper-1.02.185-1.amzn2023.0.5.x86_64.rpm                                                                    4.3 MB/s | 137 kB     00:00
+(8/55): device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64.rpm                                                               5.8 MB/s | 177 kB     00:00
+(9/55): diffutils-3.8-1.amzn2023.0.2.x86_64.rpm                                                                              13 MB/s | 370 kB     00:00
+(10/55): gzip-1.12-1.amzn2023.0.1.x86_64.rpm                                                                                1.2 MB/s | 160 kB     00:00
+(11/55): inih-58-2.amzn2023.0.1.x86_64.rpm                                                                                  201 kB/s |  19 kB     00:00
+(12/55): iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                      1.9 MB/s | 401 kB     00:00
+(13/55): containerd-2.0.5-1.amzn2023.0.2.x86_64.rpm                                                                          30 MB/s |  26 MB     00:00
+(14/55): iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm                                                                       562 kB/s | 183 kB     00:00
+(15/55): kmod-libs-29-2.amzn2023.0.5.x86_64.rpm                                                                             1.2 MB/s |  62 kB     00:00
+(16/55): libargon2-20171227-9.amzn2023.0.2.x86_64.rpm                                                                       306 kB/s |  29 kB     00:00
+(17/55): libcgroup-3.0-1.amzn2023.0.1.x86_64.rpm                                                                            379 kB/s |  75 kB     00:00
+(18/55): docker-25.0.8-1.amzn2023.0.5.x86_64.rpm                                                                             36 MB/s |  46 MB     00:01
+(19/55): libdb-5.3.28-49.amzn2023.0.2.x86_64.rpm                                                                            1.9 MB/s | 756 kB     00:00
+(20/55): libeconf-0.4.0-1.amzn2023.0.3.x86_64.rpm                                                                           114 kB/s |  28 kB     00:00
+(21/55): libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64.rpm                                                                 8.9 MB/s | 108 kB     00:00
+(22/55): libfdisk-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                          9.4 MB/s | 153 kB     00:00
+(23/55): libibverbs-48.0-1.amzn2023.0.1.x86_64.rpm                                                                           21 MB/s | 433 kB     00:00
+(24/55): libmnl-1.0.4-13.amzn2023.0.2.x86_64.rpm                                                                            2.2 MB/s |  29 kB     00:00
+(25/55): libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64.rpm                                                             4.4 MB/s |  58 kB     00:00
+(26/55): libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64.rpm                                                                      2.6 MB/s |  30 kB     00:00
+(27/55): libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm                                                                           6.8 MB/s |  84 kB     00:00
+(28/55): libnl3-3.5.0-6.amzn2023.0.2.x86_64.rpm                                                                              27 MB/s | 330 kB     00:00
+(29/55): libpcap-1.10.1-1.amzn2023.0.2.x86_64.rpm                                                                            12 MB/s | 173 kB     00:00
+(30/55): libpwquality-1.4.4-6.amzn2023.0.2.x86_64.rpm                                                                       7.8 MB/s | 106 kB     00:00
+(31/55): libseccomp-2.5.3-1.amzn2023.0.2.x86_64.rpm                                                                         7.5 MB/s |  71 kB     00:00
+(32/55): libselinux-utils-3.4-5.amzn2023.0.2.x86_64.rpm                                                                     5.2 MB/s | 142 kB     00:00
+(33/55): libutempter-1.2.1-4.amzn2023.0.2.x86_64.rpm                                                                        1.1 MB/s |  26 kB     00:00
+(34/55): libsemanage-3.4-5.amzn2023.0.2.x86_64.rpm                                                                          4.0 MB/s | 121 kB     00:00
+(35/55): libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64.rpm                                                                        16 MB/s | 145 kB     00:00
+(36/55): pam-1.5.1-8.amzn2023.0.6.x86_64.rpm                                                                                 29 MB/s | 547 kB     00:00
+(37/55): pigz-2.5-1.amzn2023.0.3.x86_64.rpm                                                                                 4.6 MB/s |  83 kB     00:00
+(38/55): policycoreutils-3.4-6.amzn2023.0.2.x86_64.rpm                                                                       11 MB/s | 211 kB     00:00
+(39/55): qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64.rpm                                                                      6.3 MB/s |  66 kB     00:00
+(40/55): rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64.rpm                                                             1.7 MB/s |  18 kB     00:00
+(41/55): selinux-policy-38.1.50-1.amzn2023.0.2.noarch.rpm                                                                   1.2 MB/s |  46 kB     00:00
+(42/55): runc-1.2.6-1.amzn2023.0.1.x86_64.rpm                                                                                52 MB/s | 3.7 MB     00:00
+(43/55): shadow-utils-4.9-12.amzn2023.0.4.x86_64.rpm                                                                         11 MB/s | 1.1 MB     00:00
+(44/55): selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch.rpm                                                           33 MB/s | 6.5 MB     00:00
+(45/55): systemd-252.23-6.amzn2023.x86_64.rpm                                                                                24 MB/s | 4.2 MB     00:00
+(46/55): systemd-libs-252.23-6.amzn2023.x86_64.rpm                                                                          5.7 MB/s | 614 kB     00:00
+(47/55): systemd-networkd-252.23-6.amzn2023.x86_64.rpm                                                                      8.9 MB/s | 604 kB     00:00
+(48/55): systemd-pam-252.23-6.amzn2023.x86_64.rpm                                                                           7.5 MB/s | 316 kB     00:00
+(49/55): systemd-resolved-252.23-6.amzn2023.x86_64.rpm                                                                      6.9 MB/s | 268 kB     00:00
+(50/55): userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64.rpm                                                                     2.5 MB/s | 105 kB     00:00
+(51/55): util-linux-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                         43 MB/s | 2.2 MB     00:00
+(52/55): util-linux-core-2.37.4-1.amzn2023.0.4.x86_64.rpm                                                                   6.9 MB/s | 432 kB     00:00
+(53/55): xfsprogs-6.12.0-3.amzn2023.x86_64.rpm                                                                               23 MB/s | 1.1 MB     00:00
+(54/55): xkeyboard-config-2.41-1.amzn2023.0.1.noarch.rpm                                                                     25 MB/s | 922 kB     00:00
+(55/55): xz-5.2.5-9.amzn2023.0.2.x86_64.rpm                                                                                 7.9 MB/s | 215 kB     00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                        33 MB/s | 100 MB     00:03
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                              1/1
+  Preparing        :                                                                                                                                    1/1
+  Installing       : systemd-libs-252.23-6.amzn2023.x86_64                                                                                             1/55
+  Installing       : libseccomp-2.5.3-1.amzn2023.0.2.x86_64                                                                                            2/55
+  Installing       : libmnl-1.0.4-13.amzn2023.0.2.x86_64                                                                                               3/55
+  Installing       : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                  4/55
+  Installing       : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                      5/55
+  Running scriptlet: util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                      5/55
+  Installing       : libsemanage-3.4-5.amzn2023.0.2.x86_64                                                                                             6/55
+  Installing       : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64                                                                                         7/55
+  Installing       : libselinux-utils-3.4-5.amzn2023.0.2.x86_64                                                                                        8/55
+  Installing       : libfdisk-2.37.4-1.amzn2023.0.4.x86_64                                                                                             9/55
+  Installing       : diffutils-3.8-1.amzn2023.0.2.x86_64                                                                                              10/55
+  Running scriptlet: libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          11/55
+  Installing       : libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          11/55
+  Installing       : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                           12/55
+  Running scriptlet: containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                           12/55
+  Installing       : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                             13/55
+  Installing       : xz-5.2.5-9.amzn2023.0.2.x86_64                                                                                                   14/55
+  Installing       : xkeyboard-config-2.41-1.amzn2023.0.1.noarch                                                                                      15/55
+  Installing       : libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64                                                                                         16/55
+  Installing       : userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64                                                                                       17/55
+  Installing       : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64                                                                                        18/55
+  Installing       : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   19/55
+  Installing       : libnl3-3.5.0-6.amzn2023.0.2.x86_64                                                                                               20/55
+  Installing       : libibverbs-48.0-1.amzn2023.0.1.x86_64                                                                                            21/55
+  Installing       : libpcap-14:1.10.1-1.amzn2023.0.2.x86_64                                                                                          22/55
+  Installing       : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                        23/55
+  Installing       : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                               24/55
+  Installing       : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                        25/55
+  Installing       : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         26/55
+  Running scriptlet: iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         26/55
+  Installing       : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64                                                                                   27/55
+  Installing       : libeconf-0.4.0-1.amzn2023.0.3.x86_64                                                                                             28/55
+  Installing       : libdb-5.3.28-49.amzn2023.0.2.x86_64                                                                                              29/55
+  Installing       : libargon2-20171227-9.amzn2023.0.2.x86_64                                                                                         30/55
+  Installing       : kmod-libs-29-2.amzn2023.0.5.x86_64                                                                                               31/55
+  Installing       : inih-58-2.amzn2023.0.1.x86_64                                                                                                    32/55
+  Installing       : xfsprogs-6.12.0-3.amzn2023.x86_64                                                                                                33/55
+  Installing       : gzip-1.12-1.amzn2023.0.1.x86_64                                                                                                  34/55
+  Installing       : cracklib-2.9.6-27.amzn2023.0.2.x86_64                                                                                            35/55
+  Installing       : pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  36/55
+  Installing       : libpwquality-1.4.4-6.amzn2023.0.2.x86_64                                                                                         37/55
+  Installing       : util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          38/55
+warning: /etc/adjtime created as /etc/adjtime.rpmnew
+
+  Running scriptlet: util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          38/55
+  Installing       : policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        39/55
+  Running scriptlet: policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        39/55
+  Installing       : rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64                                                                               40/55
+  Installing       : selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     41/55
+  Running scriptlet: selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     41/55
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Installing       : selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            42/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Installing       : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    43/55
+  Installing       : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                      44/55
+  Running scriptlet: dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                      44/55
+  Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Installing       : dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Running scriptlet: dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                             45/55
+  Installing       : dbus-1:1.12.28-1.amzn2023.0.1.x86_64                                                                                             46/55
+  Installing       : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64                                                                                      47/55
+  Installing       : device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64                                                                                48/55
+  Installing       : device-mapper-1.02.185-1.amzn2023.0.5.x86_64                                                                                     49/55
+  Installing       : systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        50/55
+  Running scriptlet: systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        50/55
+  Installing       : systemd-pam-252.23-6.amzn2023.x86_64                                                                                             51/55
+  Installing       : systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        52/55
+  Running scriptlet: systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        52/55
+  Installing       : systemd-252.23-6.amzn2023.x86_64                                                                                                 53/55
+  Running scriptlet: systemd-252.23-6.amzn2023.x86_64                                                                                                 53/55
+Creating group 'input' with GID 104.
+Creating group 'kvm' with GID 36.
+Creating group 'render' with GID 105.
+Creating group 'sgx' with GID 106.
+Creating group 'systemd-journal' with GID 190.
+Creating group 'systemd-network' with GID 192.
+Creating user 'systemd-network' (systemd Network Management) with UID 192 and GID 192.
+Creating group 'systemd-oom' with GID 999.
+Creating user 'systemd-oom' (systemd Userspace OOM Killer) with UID 999 and GID 999.
+Creating group 'systemd-resolve' with GID 193.
+Creating user 'systemd-resolve' (systemd Resolver) with UID 193 and GID 193.
+
+  Installing       : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                              54/55
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+  Installing       : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+Error unpacking rpm package docker-25.0.8-1.amzn2023.0.5.x86_64
+  Running scriptlet: pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  55/55
+error: unpacking of archive failed on file /usr/bin/docker;68d3d745: cpio: rename failed - No data available
+error: docker-25.0.8-1.amzn2023.0.5.x86_64: install failed
+
+  Running scriptlet: selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            55/55
+  Running scriptlet: container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                    55/55
+  Running scriptlet: systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        55/55
+  Running scriptlet: docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              55/55
+  Verifying        : container-selinux-3:2.233.0-1.amzn2023.noarch                                                                                     1/55
+  Verifying        : containerd-2.0.5-1.amzn2023.0.2.x86_64                                                                                            2/55
+  Verifying        : cracklib-2.9.6-27.amzn2023.0.2.x86_64                                                                                             3/55
+  Verifying        : cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64                                                                                       4/55
+  Verifying        : dbus-1:1.12.28-1.amzn2023.0.1.x86_64                                                                                              5/55
+  Verifying        : dbus-broker-32-1.amzn2023.0.2.x86_64                                                                                              6/55
+  Verifying        : dbus-common-1:1.12.28-1.amzn2023.0.1.noarch                                                                                       7/55
+  Verifying        : device-mapper-1.02.185-1.amzn2023.0.5.x86_64                                                                                      8/55
+  Verifying        : device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64                                                                                 9/55
+  Verifying        : diffutils-3.8-1.amzn2023.0.2.x86_64                                                                                              10/55
+  Verifying        : docker-25.0.8-1.amzn2023.0.5.x86_64                                                                                              11/55
+  Verifying        : gzip-1.12-1.amzn2023.0.1.x86_64                                                                                                  12/55
+  Verifying        : inih-58-2.amzn2023.0.1.x86_64                                                                                                    13/55
+  Verifying        : iptables-libs-1.8.8-3.amzn2023.0.2.x86_64                                                                                        14/55
+  Verifying        : iptables-nft-1.8.8-3.amzn2023.0.2.x86_64                                                                                         15/55
+  Verifying        : kmod-libs-29-2.amzn2023.0.5.x86_64                                                                                               16/55
+  Verifying        : libargon2-20171227-9.amzn2023.0.2.x86_64                                                                                         17/55
+  Verifying        : libcgroup-3.0-1.amzn2023.0.1.x86_64                                                                                              18/55
+  Verifying        : libdb-5.3.28-49.amzn2023.0.2.x86_64                                                                                              19/55
+  Verifying        : libeconf-0.4.0-1.amzn2023.0.3.x86_64                                                                                             20/55
+  Verifying        : libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64                                                                                   21/55
+  Verifying        : libfdisk-2.37.4-1.amzn2023.0.4.x86_64                                                                                            22/55
+  Verifying        : libibverbs-48.0-1.amzn2023.0.1.x86_64                                                                                            23/55
+  Verifying        : libmnl-1.0.4-13.amzn2023.0.2.x86_64                                                                                              24/55
+  Verifying        : libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64                                                                               25/55
+  Verifying        : libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64                                                                                        26/55
+  Verifying        : libnftnl-1.2.2-2.amzn2023.0.2.x86_64                                                                                             27/55
+  Verifying        : libnl3-3.5.0-6.amzn2023.0.2.x86_64                                                                                               28/55
+  Verifying        : libpcap-14:1.10.1-1.amzn2023.0.2.x86_64                                                                                          29/55
+  Verifying        : libpwquality-1.4.4-6.amzn2023.0.2.x86_64                                                                                         30/55
+  Verifying        : libseccomp-2.5.3-1.amzn2023.0.2.x86_64                                                                                           31/55
+  Verifying        : libselinux-utils-3.4-5.amzn2023.0.2.x86_64                                                                                       32/55
+  Verifying        : libsemanage-3.4-5.amzn2023.0.2.x86_64                                                                                            33/55
+  Verifying        : libutempter-1.2.1-4.amzn2023.0.2.x86_64                                                                                          34/55
+  Verifying        : libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64                                                                                         35/55
+  Verifying        : pam-1.5.1-8.amzn2023.0.6.x86_64                                                                                                  36/55
+  Verifying        : pigz-2.5-1.amzn2023.0.3.x86_64                                                                                                   37/55
+  Verifying        : policycoreutils-3.4-6.amzn2023.0.2.x86_64                                                                                        38/55
+  Verifying        : qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64                                                                                        39/55
+  Verifying        : rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64                                                                               40/55
+  Verifying        : runc-1.2.6-1.amzn2023.0.1.x86_64                                                                                                 41/55
+  Verifying        : selinux-policy-38.1.50-1.amzn2023.0.2.noarch                                                                                     42/55
+  Verifying        : selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch                                                                            43/55
+  Verifying        : shadow-utils-2:4.9-12.amzn2023.0.4.x86_64                                                                                        44/55
+  Verifying        : systemd-252.23-6.amzn2023.x86_64                                                                                                 45/55
+  Verifying        : systemd-libs-252.23-6.amzn2023.x86_64                                                                                            46/55
+  Verifying        : systemd-networkd-252.23-6.amzn2023.x86_64                                                                                        47/55
+  Verifying        : systemd-pam-252.23-6.amzn2023.x86_64                                                                                             48/55
+  Verifying        : systemd-resolved-252.23-6.amzn2023.x86_64                                                                                        49/55
+  Verifying        : userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64                                                                                       50/55
+  Verifying        : util-linux-2.37.4-1.amzn2023.0.4.x86_64                                                                                          51/55
+  Verifying        : util-linux-core-2.37.4-1.amzn2023.0.4.x86_64                                                                                     52/55
+  Verifying        : xfsprogs-6.12.0-3.amzn2023.x86_64                                                                                                53/55
+  Verifying        : xkeyboard-config-2.41-1.amzn2023.0.1.noarch                                                                                      54/55
+  Verifying        : xz-5.2.5-9.amzn2023.0.2.x86_64                                                                                                   55/55
+
+Installed:
+  container-selinux-3:2.233.0-1.amzn2023.noarch   containerd-2.0.5-1.amzn2023.0.2.x86_64           cracklib-2.9.6-27.amzn2023.0.2.x86_64
+  cryptsetup-libs-2.6.1-1.amzn2023.0.1.x86_64     dbus-1:1.12.28-1.amzn2023.0.1.x86_64             dbus-broker-32-1.amzn2023.0.2.x86_64
+  dbus-common-1:1.12.28-1.amzn2023.0.1.noarch     device-mapper-1.02.185-1.amzn2023.0.5.x86_64     device-mapper-libs-1.02.185-1.amzn2023.0.5.x86_64
+  diffutils-3.8-1.amzn2023.0.2.x86_64             gzip-1.12-1.amzn2023.0.1.x86_64                  inih-58-2.amzn2023.0.1.x86_64
+  iptables-libs-1.8.8-3.amzn2023.0.2.x86_64       iptables-nft-1.8.8-3.amzn2023.0.2.x86_64         kmod-libs-29-2.amzn2023.0.5.x86_64
+  libargon2-20171227-9.amzn2023.0.2.x86_64        libcgroup-3.0-1.amzn2023.0.1.x86_64              libdb-5.3.28-49.amzn2023.0.2.x86_64
+  libeconf-0.4.0-1.amzn2023.0.3.x86_64            libedit-3.1-38.20210714cvs.amzn2023.0.2.x86_64   libfdisk-2.37.4-1.amzn2023.0.4.x86_64
+  libibverbs-48.0-1.amzn2023.0.1.x86_64           libmnl-1.0.4-13.amzn2023.0.2.x86_64              libnetfilter_conntrack-1.0.8-2.amzn2023.0.2.x86_64
+  libnfnetlink-1.0.1-19.amzn2023.0.2.x86_64       libnftnl-1.2.2-2.amzn2023.0.2.x86_64             libnl3-3.5.0-6.amzn2023.0.2.x86_64
+  libpcap-14:1.10.1-1.amzn2023.0.2.x86_64         libpwquality-1.4.4-6.amzn2023.0.2.x86_64         libseccomp-2.5.3-1.amzn2023.0.2.x86_64
+  libselinux-utils-3.4-5.amzn2023.0.2.x86_64      libsemanage-3.4-5.amzn2023.0.2.x86_64            libutempter-1.2.1-4.amzn2023.0.2.x86_64
+  libxkbcommon-1.6.0-2.amzn2023.0.1.x86_64        pam-1.5.1-8.amzn2023.0.6.x86_64                  pigz-2.5-1.amzn2023.0.3.x86_64
+  policycoreutils-3.4-6.amzn2023.0.2.x86_64       qrencode-libs-4.1.1-2.amzn2023.0.2.x86_64        rpm-plugin-selinux-4.16.1.3-29.amzn2023.0.6.x86_64
+  runc-1.2.6-1.amzn2023.0.1.x86_64                selinux-policy-38.1.50-1.amzn2023.0.2.noarch     selinux-policy-targeted-38.1.50-1.amzn2023.0.2.noarch
+  shadow-utils-2:4.9-12.amzn2023.0.4.x86_64       systemd-252.23-6.amzn2023.x86_64                 systemd-libs-252.23-6.amzn2023.x86_64
+  systemd-networkd-252.23-6.amzn2023.x86_64       systemd-pam-252.23-6.amzn2023.x86_64             systemd-resolved-252.23-6.amzn2023.x86_64
+  userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64      util-linux-2.37.4-1.amzn2023.0.4.x86_64          util-linux-core-2.37.4-1.amzn2023.0.4.x86_64
+  xfsprogs-6.12.0-3.amzn2023.x86_64               xkeyboard-config-2.41-1.amzn2023.0.1.noarch      xz-5.2.5-9.amzn2023.0.2.x86_64
+Failed:
+  docker-25.0.8-1.amzn2023.0.5.x86_64
+
+Error: Transaction failed
+bash-5.2# docker -v
+Docker version 25.0.8, build 0bab007
+bash-5.2# docker pull amazonlinux
+Using default tag: latest
+latest: Pulling from library/amazonlinux
+Digest: sha256:4f02d5d4500105878af64950f9c46cde3392b907907cb0d23a885c721a26f67d
+Status: Image is up to date for amazonlinux:latest
+docker.io/library/amazonlinux:latest
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+amd64/amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+amazonlinux         latest    1a9d780a8670   13 days ago   149MB
+ubuntu              latest    6d79abd4c962   2 weeks ago   78.1MB
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND   CREATED         STATUS                      PORTS     NAMES
+94dcb0508fa4   amazonlinux   "bash"    2 minutes ago   Exited (0) 18 seconds ago             doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker start doc-mac
+doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker attach doc-mac
+bash-5.2# docker search kali
+NAME                           DESCRIPTION                                     STARS     OFFICIAL
+leplusorg/kali                 Kali Linux as a docker container.               12
+brimstone/kali                 Image for various bits of Kali Linux            12
+artis3n/kali                   Source + Readme: https://github.com/artis3n/…   0
+kalilinux/kali-rolling         Official Kali Linux Docker image (weekly sna…   978
+isaudits/kali                  Kali Linux with installed toolset; separate …   3
+mlinarik/kali                                                                  0
+finchsec/kali                  Kali with Wi-Fi tools - Refreshed/Updated ev…   1
+amitie10g/kali                 Kali Linux for all needs                        1
+buluma/kali                    Kali Linux (kali-rolling) Docker container f…   1
+pant/kali                      Clean Kali Installation-Update from official…   0
+johnsandiford/kali             Kali Linux                                      0
+linuxkonsult/kali              Kali Linux 2.0 base image                       10
+penpublicreps/kali                                                             1
+kal747/kali                    Kali                                            0
+qeeqbox/kali                   Kali distro with remote access (VNC, RDP and…   1
+vineelsai/kali                                                                 0
+kasmweb/core-kali-rolling      Kali Rolling XFCE Desktop With Default Tools…   72
+oonray/kali                                                                    0
+rfhs/kali                      This is the kali docker image used by RFHS f…   1
+kalilinux/kali-bleeding-edge   Same as kali-rolling with kali-bleeding-edge…   57
+mbennao/kali                                                                   0
+samirettali/kali                Kali Linux containers for bug bounty and CT…   1
+ctarwater/kali                 Kali base image (no tools)                      0
+andreaslae/kali                                                                0
+danilonc/kali                  Kali with apt cache downloaded                  0
+bash-5.2# docker pull leplusorg/kali
+Using default tag: latest
+latest: Pulling from leplusorg/kali
+bf2fe941f6a2: Pull complete
+b0592053f47c: Pull complete
+Digest: sha256:5c6309c0dab29678236426233337b392684f403f38436afe30a614535d113bd7
+Status: Downloaded newer image for leplusorg/kali:latest
+docker.io/leplusorg/kali:latest
+bash-5.2# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+amd64/amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+amazonlinux         latest    1a9d780a8670   13 days ago   149MB
+ubuntu              latest    6d79abd4c962   2 weeks ago   78.1MB
+leplusorg/kali      latest    e5b67c7bab6c   4 weeks ago   768MB
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+amd64/amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+amazonlinux         latest    1a9d780a8670   13 days ago   149MB
+ubuntu              latest    6d79abd4c962   2 weeks ago   78.1MB
+leplusorg/kali      latest    e5b67c7bab6c   4 weeks ago   768MB
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND   CREATED         STATUS                      PORTS     NAMES
+94dcb0508fa4   amazonlinux   "bash"    4 minutes ago   Exited (0) 52 seconds ago             doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker start doc-mac
+doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker attach doc-mac
+bash-5.2# docker iamges
+docker: 'iamges' is not a docker command.
+See 'docker --help'
+bash-5.2# docker images
+REPOSITORY          TAG       IMAGE ID       CREATED       SIZE
+amd64/amazonlinux   latest    1a9d780a8670   13 days ago   149MB
+amazonlinux         latest    1a9d780a8670   13 days ago   149MB
+ubuntu              latest    6d79abd4c962   2 weeks ago   78.1MB
+leplusorg/kali      latest    e5b67c7bab6c   4 weeks ago   768MB
+bash-5.2# docker run -it --name doc-mac-cont ubuntu /bin/bash
+root@a6d13e5a4b54:/# exit
+exit
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                     PORTS     NAMES
+a6d13e5a4b54   ubuntu        "/bin/bash"   20 seconds ago   Exited (0) 8 seconds ago             doc-mac-cont
+94dcb0508fa4   amazonlinux   "bash"        6 minutes ago    Exited (0) 4 seconds ago             doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker start doc-mac
+doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker attach doc-mac
+bash-5.2# docker start doc-mac-cont
+doc-mac-cont
+bash-5.2# docker attach doc-mac-cont
+root@a6d13e5a4b54:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@a6d13e5a4b54:/# mkdir file
+root@a6d13e5a4b54:/# cd file
+root@a6d13e5a4b54:/file# cat >newfile
+this file inside container inside the container
+root@a6d13e5a4b54:/file# exit
+exit
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]# docker start doc-mac
+doc-mac
+[root@ip-172-31-4-140 ec2-user]# docker attach doc-mac
+bash-5.2# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+bash-5.2# cd /
+bash-5.2# ls
+bin  boot  dev  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+bash-5.2# docker start doc-mac-cont
+doc-mac-cont
+bash-5.2# docker attach doc-mac-cont
+root@a6d13e5a4b54:/# ls
+bin  boot  dev  etc  file  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@a6d13e5a4b54:/# exit
+exit
+bash-5.2# exit
+exit
+[root@ip-172-31-4-140 ec2-user]#

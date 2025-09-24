@@ -1,0 +1,70 @@
+[root@ip-172-31-4-140 ec2-user]# history
+    1  yum install docker -y
+    2  docker -v
+    3  docker search ubuntu
+    4  service docker start
+    5  docker search ubuntu
+    6  docker pull ubuntu
+    7  docker network ls
+    8  docker run -it --name ser1 --network host ubuntu /bin/bash
+    9  ifconfig
+   10  hostname
+   11  docker ps
+   12  docker start ser1
+   13  docker attach ser1
+   14  history
+   15  docker ps
+   16  docker ps -a
+   17  docker attach ser1
+   18  docker start ser1
+   19  docker attach ser1
+   20  docker search amazonlinux
+   21  docker pull amazolinux
+   22  docker pull amazonlinux
+   23  docker images
+   24  docker run -it --name amz-linux amazonlinux /bin/bash
+   25  service docker start
+   26  service docker status
+   27  service docker start
+   28  docker ps -a
+   29  docker attach amz-linux
+   30  docker start amz-linux
+   31  docker attach amz-linux
+   32  docker info
+   33  docker run -it   --name docker-inside   -v /var/run/docker.sock:/var/run/docker.sock   -v /usr/bin/docker:/usr/bin/docker   --privileged   ubuntu bash
+   34  docker ps -a
+   35  docker start amz-linux
+   36  docker attach amz-linux
+   37  docker ps
+   38  docker ps -a
+   39  docker start docker-inside
+   40  docker attach docker-inside
+   41  docker run -it >   --name docker-inside >   -v /var/run/docker.sock:/var/run/docker.sock >   -v /usr/bin/docker:/usr/bin/docker >   --privileged >  amazonlinuz bash
+   42  docker images
+   43  apt-get update
+   44  apt-get install docker.io -y
+   45  apt-get install docker.io -y
+   46  docker start docker-inside
+   47  docker atach docker-inside
+   48  docker attach docker-inside
+   49  docker ps -a
+   50  docker ps
+   51  docker stop cont-inside-cont
+   52  docker rm cont-inside-cont docker-inside amz-linux ser1
+   53  ls
+   54  docker ps -a
+   55  docker run -it   --name doc-mac   --privileged   -v /var/run/docker.sock:/var/run/docker.sock   -v /usr/bin/docker:/usr/bin/docker   amazonlinux bash
+   56  docker images
+   57  docker ps -a
+   58  docker start doc-mac
+   59  docker attach doc-mac
+   60  docker images
+   61  docker ps -a
+   62  docker start doc-mac
+   63  docker attach doc-mac
+   64  docker ps -a
+   65  docker start doc-mac
+   66  docker attach doc-mac
+   67  docker start doc-mac
+   68  docker attach doc-mac
+   69  history
